@@ -10,7 +10,7 @@ A [docsify.js](https://docsify.js.org) plugin for <your plugins capabilities> fr
 
 </div>
 
-- [Documentation & Demos](<https://jthegedus.github.io/docsify-select)
+- [Documentation & Demos](https://jthegedus.github.io/docsify-select)
 
 ## Contributing
 
