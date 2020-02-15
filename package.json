@@ -1,0 +1,67 @@
+{
+  "name": "docsify-select",
+  "version": "1.0.0",
+  "description": "A docsify.js plugin for variably rendering content with html select menus",
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/jthegedus/docsify-select#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jthegedus/docsify-select.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jthegedus/docsify-select/issues"
+  },
+  "keywords": [
+    "docsify",
+    "docsify.js",
+    "docsify-plugin",
+    "template",
+    "documentation",
+    "generator"
+  ],
+  "main": "dist/index.js",
+  "unpkg": "dist/index.min.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "docsify-cli": "^4.4.0",
+    "husky": "^4.2.3",
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2",
+    "xo": "^0.26.1"
+  },
+  "scripts": {
+    "dev": "parcel src/main.js --target browser",
+    "build": "parcel build src/main.js --target browser",
+    "clean": "rimraf dist/",
+    "fix": "xo --fix",
+    "test": "xo"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "xo --fix",
+      "pre-push": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false
+        }
+      ]
+    ]
+  },
+  "engines": {
+    "browsers": "ie >= 10"
+  }
+}
