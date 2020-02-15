@@ -1,25 +1,24 @@
 <div align="center">
 
-# docsify-plugin-template
+# docsify-select
 
-A [docsify.js](https://docsify.js.org/) plugin template. Includes linting, GitHub Actions and more!
+[![Release](https://img.shields.io/github/release/jthegedus/docsify-select.svg)](https://github.com/jthegedus/docsify-select/releases) [![NPM](https://img.shields.io/npm/v/docsify-select.svg?style=flat-square)](https://www.npmjs.com/package/docsify-select) ![Unit Tests](https://github.com/jthegedus/docsify-select/workflows/.github/workflows/tests.yml/badge.svg)
+
+A [docsify.js](https://docsify.js.org) plugin for <your plugins capabilities> from markdown.
+
+<!-- insert gif of demo here -->
 
 </div>
 
-## Usage
-
-1. Use your IDE's `Replace All` function to replace `<your github username>`.
-2. Use your IDE's `Replace All` function to replace `<your plugin>`.
-    EG: replace `<your plugin>` -> `tabs` = `docsify-tabs`
-3. Rename `readme_template.md` to `readme.md` and replace this file.
+- [Documentation & Demos](<https://jthegedus.github.io/docsify-select)
 
 ## Contributing
 
-Contributions to this template are welcome!
+[Contributions of any kind welcome, just follow the guidelines](contributing.md)!
 
 ### Contributors
 
-[Thanks goes to these contributors](https://github.com/jthegedus/docsify-plugin-template/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/jthegedus/docsify-select/graphs/contributors)!
 
 ## License
 

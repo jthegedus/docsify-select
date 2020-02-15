@@ -1,8 +1,8 @@
 <div align="center">
 
-# docsify-<your plugin>
+# docsify-select
 
-[![Release](https://img.shields.io/github/release/<your github username>/docsify-<your plugin>.svg)](https://github.com/<your github username>/docsify-<your plugin>/releases) [![NPM](https://img.shields.io/npm/v/docsify-<your plugin>.svg?style=flat-square)](https://www.npmjs.com/package/docsify-<your plugin>) ![Unit Tests](https://github.com/<your github username>/docsify-<your plugin>/workflows/.github/workflows/tests.yml/badge.svg)
+[![Release](https://img.shields.io/github/release/jthegedus/docsify-select.svg)](https://github.com/jthegedus/docsify-select/releases) [![NPM](https://img.shields.io/npm/v/docsify-select.svg?style=flat-square)](https://www.npmjs.com/package/docsify-select) ![Unit Tests](https://github.com/jthegedus/docsify-select/workflows/.github/workflows/tests.yml/badge.svg)
 
 A [docsify.js](https://docsify.js.org) plugin for <your plugins capabilities> from markdown.
 
@@ -28,14 +28,14 @@ A [docsify.js](https://docsify.js.org) plugin for <your plugins capabilities> fr
 
 ## Installation
 
-1. Add the `docsify-<your plugin>` plugin to your `index.html` after Docsify.
+1. Add the `docsify-select` plugin to your `index.html` after Docsify.
 
 ```html
 <!-- docsify (latest v4.x.x)-->
 <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
 
-<!-- docsify-<your plugin> (latest v1.x.x) -->
-<script src="https://cdn.jsdelivr.net/npm/docsify-<your plugin>@1"></script>
+<!-- docsify-select (latest v1.x.x) -->
+<script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
 ```
 
 2. Set your configuration options in the Docsify settings in your `index.html`
@@ -59,7 +59,7 @@ window.$docsify = {
 
 ## Options
 
-Options are set within the [`window.$docsify](https://docsify.js.org/#/configuration) configuration under the `<your plugin>` key.
+Options are set within the [`window.$docsify](https://docsify.js.org/#/configuration) configuration under the `select` key.
 
 ## Customization
 
@@ -67,8 +67,8 @@ Options are set within the [`window.$docsify](https://docsify.js.org/#/configura
 
 ## Support
 
-Create a [GitHub issue](https://github.com/<your github username>/docsify-<your-plugin>/issues) for bug reports, feature requests, or questions
+Create a [GitHub issue](https://github.com/jthegedus/docsify-<your-plugin>/issues) for bug reports, feature requests, or questions
 
 ## License
 
-[MIT License](https://github.com/<your github username>/docsify-<your-plugin>/blob/master/license)
+[MIT License](https://github.com/jthegedus/docsify-<your-plugin>/blob/master/license)
