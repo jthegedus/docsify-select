@@ -356,6 +356,7 @@ Regular content here
 - [ ] tests (unit & e2e)
 - [ ] release a v1
 - [ ] custom theme for `docsify-select` docs site
+- [ ] GitHub repo social preview
 - [ ] selectComment definitions to allow more freedom other plugins (`docsify-tabs`)
 - [ ] favicon
 
