@@ -30,10 +30,10 @@
         window.$docsify = {
             // GENERAL
             // -----------------------------------------------------------------
-            name: 'docsify-tabs',
+            name: 'docsify-select',
             repo: 'https://github.com/jthegedus/docsify-select',
             homepage: 'index.md',
-            // loadSidebar: 'sidebar.md',
+            loadSidebar: 'sidebar.md',
 
             // NAVIGATION
             // -----------------------------------------------------------------
@@ -44,13 +44,17 @@
             // PLUGINS
             // -----------------------------------------------------------------
             executeScript: true,
-            ga: 'UA-100100910-4',
             search: {
                 depth: 3,
                 noData: 'No results!',
                 placeholder: 'Search...'
             },
             select: {
+                theme: 'classic'
+            },
+            tabs: {
+                sync: false,
+                theme: 'classic'
             }
         };
     </script>
@@ -58,6 +62,7 @@
     <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>

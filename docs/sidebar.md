@@ -1,0 +1,6 @@
+- [Documentation](/)
+- **Links**
+- [![Github](https://icongr.am/simple/github.svg?color=808080&size=16)Github](https://github.com/jthegedus/docsify-select)
+- [![NPM](https://icongr.am/simple/npm.svg?colored&size=16)NPM](https://www.npmjs.com/package/docsify-select)
+- [![Twitter](https://icongr.am/simple/twitter.svg?colored&size=16)@jthegedus](http://twitter.com/jthegedus)
+- [![Medium](https://icongr.am/simple/medium.svg?color&size=16)Medium](https://medium.com/@jthegedus)
