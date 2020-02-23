@@ -1,7 +1,7 @@
 {
   "name": "docsify-select",
   "version": "1.0.0",
-  "description": "A docsify.js plugin for variably rendering content with html select menus",
+  "description": "A docsify.js plugin for variably rendering content with html select menus from markdown",
   "author": "",
   "license": "MIT",
   "homepage": "https://github.com/jthegedus/docsify-select#readme",
@@ -20,7 +20,7 @@
     "documentation",
     "generator"
   ],
-  "main": "dist/index.js",
+  "main": "dist/index.min.js",
   "unpkg": "dist/index.min.js",
   "files": [
     "dist"
@@ -31,15 +31,34 @@
     "@babel/preset-env": "^7.8.4",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.7",
+    "compression": "^1.7.4",
     "docsify-cli": "^4.4.0",
     "husky": "^4.2.3",
-    "parcel-bundler": "^1.12.4",
+    "lodash.merge": "^4.6.2",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-flexbugs-fixes": "^4.2.0",
+    "postcss-import": "^12.0.1",
     "rimraf": "^3.0.2",
+    "rollup": "^1.31.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-postcss": "^2.0.6",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-uglify": "^6.0.4",
     "xo": "^0.26.1"
   },
   "scripts": {
-    "dev": "parcel src/main.js --target browser",
-    "build": "parcel build src/main.js --target browser",
+    "build": "rollup -c",
+    "serve": "node server.js",
+    "start": "run-p watch serve",
+    "watch": "run-p 'build -- -w'",
     "clean": "rimraf dist/",
     "fix": "xo --fix",
     "test": "xo"
@@ -61,7 +80,12 @@
       ]
     ]
   },
-  "engines": {
-    "browsers": "ie >= 10"
+  "browserslist": [
+    "ie >= 10"
+  ],
+  "xo": {
+    "env": [
+      "browser"
+    ]
   }
 }
