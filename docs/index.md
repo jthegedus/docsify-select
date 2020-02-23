@@ -10,8 +10,8 @@ A [docsify.js](https://docsify.js.org) plugin for variably rendering content wit
 
 ## Features
 
-- Generate select lists from markdown
-- Generate multiple selects that combine to render permutations of markdown
+- Single select menus
+- Complex multi-select menus with partial selections and default content
 
 ## Demo
 

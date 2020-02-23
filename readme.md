@@ -2,11 +2,18 @@
 
 # docsify-select
 
-[![Release](https://img.shields.io/github/release/jthegedus/docsify-select.svg)](https://github.com/jthegedus/docsify-select/releases) [![NPM](https://img.shields.io/npm/v/docsify-select.svg?style=flat-square)](https://www.npmjs.com/package/docsify-select) ![Unit Tests](https://github.com/jthegedus/docsify-select/workflows/Unit%20Tests/badge.svg)
+[![Release](https://img.shields.io/github/release/jthegedus/docsify-select.svg)](https://github.com/jthegedus/docsify-select/releases) [![NPM](https://img.shields.io/npm/v/docsify-select.svg)](https://www.npmjs.com/package/docsify-select) ![Unit Tests](https://github.com/jthegedus/docsify-select/workflows/Unit%20Tests/badge.svg)
 
-A [docsify.js](https://docsify.js.org) plugin for <your plugins capabilities> from markdown.
+A [docsify.js](https://docsify.js.org) plugin for variably rendering content with HTML select menus defined in markdown.
 
 <!-- insert gif of demo here -->
+
+## Features
+
+- Single select menus
+- Complex multi-select menus with partial selections and default content
+
+Many thanks to [jhildenbiddle](https://github.com/jhildenbiddle/) and his many Docsify plugins which helped as a starting place for me to get this one going.
 
 </div>
 
