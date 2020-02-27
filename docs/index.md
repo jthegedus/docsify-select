@@ -362,8 +362,8 @@ Regular content here
 
 ## Support
 
-Create a [GitHub issue](https://github.com/jthegedus/docsify-<your-plugin>/issues) for bug reports, feature requests, or questions
+Create a [GitHub issue](https://github.com/jthegedus/docsify-select/issues) for bug reports, feature requests, or questions
 
 ## License
 
-[MIT License](https://github.com/jthegedus/docsify-<your-plugin>/blob/master/license)
+[MIT License](https://github.com/jthegedus/docsify-select/blob/master/license)
