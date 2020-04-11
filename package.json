@@ -16,9 +16,7 @@
     "docsify",
     "docsify.js",
     "docsify-plugin",
-    "template",
-    "documentation",
-    "generator"
+    "documentation"
   ],
   "main": "dist/index.min.js",
   "unpkg": "dist/index.min.js",
