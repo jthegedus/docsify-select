@@ -13,7 +13,7 @@ A [docsify.js](https://docsify.js.org) plugin for variably rendering content wit
 - Single select menus
 - Multi select menus
 - Complex multi-select menus with partial selections and default content
-- Compatible with `docsify-tabs`
+- Compatible with [`docsify-tabs`](https://github.com/jhildenbiddle/docsify-tabs)
 
 ## Demo
 
