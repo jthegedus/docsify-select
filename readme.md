@@ -15,7 +15,7 @@ A [docsify.js](https://docsify.js.org) plugin for variably rendering content wit
 - Single select menus
 - Complex multi-select menus with partial selections and default content
 
-Many thanks to [jhildenbiddle](https://github.com/jhildenbiddle/) and his many Docsify plugins which helped as a starting place for me to get this one going.
+Adapted from [jhildenbiddle's](https://github.com/jhildenbiddle/) Docsify plugins, so many thanks go to them.
 
 - [Documentation & Demos](https://jthegedus.github.io/docsify-select)
 
