@@ -13,11 +13,15 @@ A [docsify.js](https://docsify.js.org) plugin for variably rendering content wit
 ## Features
 
 - Single select menus
+- Multi select menus
 - Complex multi-select menus with partial selections and default content
+- Compatible with [`docsify-tabs`](https://github.com/jhildenbiddle/docsify-tabs)
 
-Adapted from [jhildenbiddle's](https://github.com/jhildenbiddle/) Docsify plugins, so many thanks go to them.
+## [Documentation & Demos](https://jthegedus.github.io/docsify-select/)
 
-- [Documentation & Demos](https://jthegedus.github.io/docsify-select)
+## Credit
+
+Adapted from [jhildenbiddle's](https://github.com/jhildenbiddle/) `docsify-tabs` plugin, so many thanks to them.
 
 ## Contributing
 
