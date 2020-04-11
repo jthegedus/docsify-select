@@ -428,14 +428,13 @@ Regular content here
 - [x] multi-select menu with partial selections & default values
 - [x] render initial selection
 - [x] ensure compatibility with [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs)
-- [ ] tab themes
+- [ ] sync selection of menus with same id
+- [ ] select themes
   - [x] no theme
   - [ ] classic
   - [ ] material
 - [ ] live theme example
 - [ ] release a v0.1
-- [ ] parity with docsify-tabs themes
-  - [ ] material design
 - [ ] bugfixes
 - [ ] automatically detect operating system and make selection of OS for all selects with label/id "operating-system"
 - [ ] tests (unit & e2e)
