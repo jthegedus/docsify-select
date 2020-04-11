@@ -11,7 +11,9 @@ A [docsify.js](https://docsify.js.org) plugin for variably rendering content wit
 ## Features
 
 - Single select menus
+- Multi select menus
 - Complex multi-select menus with partial selections and default content
+- Compatible with `docsify-tabs`
 
 ## Demo
 
@@ -20,11 +22,11 @@ A [docsify.js](https://docsify.js.org) plugin for variably rendering content wit
 something
 
 <!-- select:start -->
-<!-- select-menu-labels: testing menu labels in comments -->
+<!-- select-menu-labels:testing menu labels in comments -->
 
 Common content can go here above the first heading in a section and be rendered for all selections!
 
-### **macOS**
+### --macOS--
 
 macOS instructions here
 
@@ -40,7 +42,7 @@ Homebrew instructions
 
 <!-- tabs:end -->
 
-### **Linux**
+#### --Linux--
 
 Linux instructions here
 
@@ -55,27 +57,27 @@ Linux instructions here
 
 Common content can go here above the first heading in a section and be rendered for all selections!
 
-### **macOS,Bash**
+### --macOS,Bash--
 
 macOS + Bash
 
-### **macOS,Fish**
+### --macOS,Fish--
 
 macOS + Fish
 
-### **macOS,ZSH**
+### --macOS,ZSH--
 
 macOS + ZSH
 
-### **Linux,Bash**
+### --Linux,Bash--
 
 Linux + Bash
 
-### **Linux,Fish**
+### --Linux,Fish--
 
 Linux + Fish
 
-### **Linux,ZSH**
+### --Linux,ZSH--
 
 Linux + ZSH
 
@@ -90,43 +92,43 @@ Linux + ZSH
 
 Common content can go here above the first heading in a section and be rendered for all selections!
 
-### **macOS,Bash,Homebrew or Something**
+### --macOS,Bash,Homebrew or Something--
 
 macOS + Bash + Homebrew
 
-### **macOS,Fish,Homebrew or Something**
+### --macOS,Fish,Homebrew or Something--
 
 macOS + Fish + Homebrew
 
-### **macOS,ZSH,Homebrew or Something**
+### --macOS,ZSH,Homebrew or Something--
 
 macOS + ZSH + Homebrew
 
-### **macOS,Bash,Git**
+### --macOS,Bash,Git--
 
 macOS + Bash + Git
 
-### **macOS,Fish,Git**
+### --macOS,Fish,Git--
 
 macOS + Fish + Git
 
-### **macOS,ZSH,Git**
+### --macOS,ZSH,Git--
 
 macOS + ZSH + Git
 
-### **Linux,Bash,Git**
+### --Linux,Bash,Git--
 
 Linux + Bash + Git
 
-### **Linux,Fish,Git**
+### --Linux,Fish,Git--
 
 Linux + Fish + Git
 
-### **Linux,ZSH,Git**
+### --Linux,ZSH,Git--
 
 Linux + ZSH + Git
 
-### **Docsify Select Default**
+### --Docsify Select Default--
 
 Some default content here. Since each Linux selection does not have "Homebrew or Something" as one of their options, the default content is rendered instead.
 
@@ -151,74 +153,106 @@ It is encouraged to have specific content for each heading to not confuse users.
 2. Set your configuration options in the Docsify settings in your `index.html`
 
 ```html
-window.$docsify = {
-	// ...
-	select: {
-		theme: 'classic'
-	}
-};
+window.$docsify = { // ... select: { theme: 'classic' } };
 ```
 
 ## Usage
 
+### Select Block
+
+A select block is started with `<!-- select:start -->` and ends with `<!-- select:end -->`
+
+### Select Menu Labels
+
+An HTML comment below the select block start: `<!-- select-menu-labels: MenuLabel1 -->`
+
+### Select Options
+
+Each markdown heading (`h1` through to `h6`) you wish to be a select option, must be surrounded on each side with 2 of the following symbols: `*`, `_`, `~` or `-`.
+
+Eg: `--macOS--` or `~~macOS~~`
+
 ### Single Select List
 
 ```markdown
+<!-- select:start -->
+<!-- select-menu-labels: Operating System -->
+
+#### -- macOS --
+
+macOS
+
+### -- Linux --
+
+Linux
+
+<!-- select:end -->
+```
 
 <!-- select:start -->
 <!-- select-menu-labels: Operating System -->
 
-#### ** macOS **
+#### -- macOS --
 
 macOS
 
-### ** Linux **
+### -- Linux --
 
 Linux
 
 <!-- select:end -->
 
-```
-
-### Multiple Select Lists!
+### Multiple Select Lists
 
 You can define multiple select lists and render content based on the combined result of the selections.
+
+Menu labels a
 
 This example has 2 select lists:
 
 ```markdown
-
 <!-- select:start -->
 <!-- select-menu-labels: Operating System,Shell -->
 
-#### ** macOS + Bash **
+#### -- macOS,Bash --
 
 macOS + Bash
 
-#### ** macOS + ZSH **
+#### -- macOS,ZSH --
 
 macOS + ZSH
 
-#### ** Linux + Bash **
+#### -- Linux,Bash --
 
 Linux + Bash
 
-#### ** Linux + ZSH **
+#### -- Linux,ZSH --
 
 Linux + ZSH
 
 <!-- select:end -->
 ```
 
-```markdown
-select 1:
-	- macOS
-	- Linux
+<!-- select:start -->
+<!-- select-menu-labels: Operating System,Shell -->
 
-select 2:
-	- Bash
-	- ZSH
-```
+#### -- macOS,Bash --
+
+macOS + Bash
+
+#### -- macOS,ZSH --
+
+macOS + ZSH
+
+#### -- Linux,Bash --
+
+Linux + Bash
+
+#### -- Linux,ZSH --
+
+Linux + ZSH
+
+<!-- select:end -->
 
 ## Options
 
@@ -226,9 +260,9 @@ Options are set within the [`window.$docsify`](https://docsify.js.org/#/configur
 
 ### Theme
 
-* Type: `string|boolean`
-* Accepts: `'classic'`, `'material'`, `false`
-* Default: `'classic'`
+- Type: `string|boolean`
+- Accepts: `'classic'`, `'material'`, `false`
+- Default: `'classic'`
 
 Sets the tab theme. A value of `false` will indicate that no theme should be applied. Use `false when creating custom select themes.
 
@@ -238,7 +272,7 @@ Sets the tab theme. A value of `false` will indicate that no theme should be app
 window.$docsify = {
   // ...
   select: {
-    theme: 'classic' // default
+    theme: "classic" // default
   }
 };
 ```
@@ -261,20 +295,42 @@ TODO: example with themes
 
 <!-- explain your plugins theme customisations here -->
 
-## Visual Tests
+## With docsify-tabs
 
-With `select` plugin imported above `tabs` in `index.html`:
+`docsify-tabs` uses `**` or `__` to identify headings to convert to tabs. Since these identifiers are different to the `--` or `~~` used by `docsify-select` the two are compatible without any specific changes.
 
-```html
-    <script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+Here are two examples showing nesting of select in tabs and tabs in select:
+
+### Select in Tabs
+
+```markdown
+<!-- tabs:start -->
+
+#### **Tab 1**
+
+Tab 1 content
+
+<!-- select:start -->
+<!-- select-menu-labels: testing menu labels in comments -->
+
+Common content can go here above the first heading in a section and be rendered for all selections!
+
+#### --Select 1--
+
+Select 1 content
+
+#### --select 2--
+
+select 2 content
+
+<!-- select:end -->
+
+#### **Tab 2**
+
+tab 2 content
+
+<!-- tabs:end -->
 ```
-
-And the use of `tabs` [tabHeadings](https://jhildenbiddle.github.io/docsify-tabs/#/?id=tabheadings) we see the following visual clashes.
-
-!> It is advised to use the [tabComments settings](https://jhildenbiddle.github.io/docsify-tabs/#/?id=tabcomments) of `docsify-tabs` as it removes this class of issues.
-
-### Select in Tabs (does not work!)
 
 <!-- tabs:start -->
 
@@ -287,11 +343,11 @@ Tab 1 content
 
 Common content can go here above the first heading in a section and be rendered for all selections!
 
-#### **Select 1**
+#### --Select 1--
 
 Select 1 content
 
-#### **select 2**
+#### --select 2--
 
 select 2 content
 
@@ -305,14 +361,15 @@ tab 2 content
 
 ---
 
-### Tabs in Select (works!)
+### Tabs in Select
 
+```markdown
 <!-- select:start -->
 <!-- select-menu-labels: testing tabs in selections -->
 
 Common content can go here above the first heading in a section and be rendered for all selections!
 
-#### **Tabs in here**
+#### --Tabs in here--
 
 Content in selection not in the tab
 
@@ -328,7 +385,35 @@ Tab 2 content
 
 <!-- tabs:end -->
 
-#### **Regular content**
+#### --Regular content--
+
+Regular content here
+
+<!-- select:end -->
+```
+
+<!-- select:start -->
+<!-- select-menu-labels: testing tabs in selections -->
+
+Common content can go here above the first heading in a section and be rendered for all selections!
+
+#### --Tabs in here--
+
+Content in selection not in the tab
+
+<!-- tabs:start -->
+
+#### **tab 1**
+
+Tab 1 content
+
+#### **tab 2**
+
+Tab 2 content
+
+<!-- tabs:end -->
+
+#### --Regular content--
 
 Regular content here
 
@@ -342,11 +427,11 @@ Regular content here
 - [x] multi-select menu
 - [x] multi-select menu with partial selections & default values
 - [x] render initial selection
-- [x] ensure compatibility with [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs).
-	- can be used together with intention. Ideally, both would support comment definitions of headings too.
+- [x] ensure compatibility with [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs)
 - [ ] tab themes
-  - [ ] no theme
+  - [x] no theme
   - [ ] classic
+  - [ ] material
 - [ ] live theme example
 - [ ] release a v0.1
 - [ ] parity with docsify-tabs themes
@@ -363,6 +448,10 @@ Regular content here
 ## Support
 
 Create a [GitHub issue](https://github.com/jthegedus/docsify-select/issues) for bug reports, feature requests, or questions
+
+## Contributing
+
+See the [contribution guide](https://github.com/jthegedus/docsify-select/blob/master/contributing.md).
 
 ## License
 

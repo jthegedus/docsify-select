@@ -45,13 +45,13 @@ const regex = {
 	// 2: Comment: <!-- select-menu-labels:
 	// 3: Menu Labels: some,labels
 	// 4: Comment tail: -->
-	selectMenuLabelsMarkup: /[\r\n]*(\s*)(<!-+\s+select-menu-labels:\s+)([\s|\S]*?)(\s+-+>)/m,
+	selectMenuLabelsMarkup: /[\r\n]*(\s*)(<!-+\s+select-menu-labels:\s*)([\s|\S]*?)(\s+-+>)/m,
 
 	// Matches select option and content
 	// 0: Match
-	// 1: Option: #### **Label** OR #### __Label__
+	// 1: Option: #### --Label-- OR #### ~~Label~~
 	// 2: Content
-	selectHeadingMarkup: /[\r\n]*(\s*)#{1,6}\s*[*_]{2}\s*(.*[^\s])\s*[*_]{2}[\r\n]+([\s\S]*?)(?=#{1,6}\s*[*_]{2}|<!-+\s+select:\s*?end\s+-+>)/m
+	selectHeadingMarkup: /[\r\n]*(\s*)#{1,6}\s*[~-]{2}\s*(.*[^\s])\s*[~-]{2}[\r\n]+([\s\S]*?)(?=#{1,6}\s*[~-]{2}|<!-+\s+select:\s*?end\s+-+>)/m
 };
 
 const settings = {
