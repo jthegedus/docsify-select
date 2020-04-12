@@ -1,6 +1,8 @@
 - [Documentation](/)
-- **Links**
-- [![Github](https://icongr.am/simple/github.svg?color&size=16)Github](https://github.com/jthegedus/docsify-select)
-- [![NPM](https://icongr.am/simple/npm.svg?colored&size=16)NPM](https://www.npmjs.com/package/docsify-select)
+- **Docsify Select**
+- [![GitHub](https://icongr.am/simple/github.svg?color&size=16)GitHub](https://github.com/jthegedus/docsify-select)
+- [![NPM](https://icongr.am/simple/npm.svg?colored&size=16)npm](https://www.npmjs.com/package/docsify-select)
+- **Author**
+- [![GitHub](https://icongr.am/simple/github.svg?color&size=16)jthegedus](https://github.com/jthegedus/)
 - [![Twitter](https://icongr.am/simple/twitter.svg?colored&size=16)@jthegedus](http://twitter.com/jthegedus)
-- [![Medium](https://icongr.am/simple/medium.svg?color&size=16)Medium](https://medium.com/@jthegedus)
+- [![Medium](https://icongr.am/simple/medium.svg?color&size=16)@jthegedus](https://medium.com/@jthegedus)
