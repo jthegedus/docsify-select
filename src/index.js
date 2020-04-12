@@ -55,6 +55,8 @@ const regex = {
 };
 
 const settings = {
+	sync: true,
+	detectOperatingSystem: {enabled: false, menuId: 'operating-system'},
 	theme: 'classic'
 };
 
@@ -182,28 +184,73 @@ function renderSelectGroupsStage2(html) {
 	return html;
 }
 
+/**
+ * Get the Operating System name.
+ *
+ * Credit: https://stackoverflow.com/a/19176790/7911479
+ *
+ * @returns {string}
+ */
+function getOperatingSystemName() {
+	let operatingSystemName = 'Unknown';
+	// If (window.navigator.userAgent.includes('Windows NT 10.0')) {
+	// 	operatingSystemName = 'Windows 10';
+	// }
+
+	// if (window.navigator.userAgent.includes('Windows NT 6.2')) {
+	// 	operatingSystemName = 'Windows 8';
+	// }
+
+	// if (window.navigator.userAgent.includes('Windows NT 6.1')) {
+	// 	operatingSystemName = 'Windows 7';
+	// }
+
+	// if (window.navigator.userAgent.includes('Windows NT 6.0')) {
+	// 	operatingSystemName = 'Windows Vista';
+	// }
+
+	// if (window.navigator.userAgent.includes('Windows NT 5.1')) {
+	// 	operatingSystemName = 'Windows XP';
+	// }
+
+	// if (window.navigator.userAgent.includes('Windows NT 5.0')) {
+	// 	operatingSystemName = 'Windows 2000';
+	// }
+
+	if (window.navigator.userAgent.includes('Win')) {
+		operatingSystemName = 'Windows';
+	}
+
+	if (window.navigator.userAgent.includes('Mac')) {
+		operatingSystemName = 'macOS';
+	}
+
+	if (window.navigator.userAgent.includes('X11')) {
+		operatingSystemName = 'UNIX';
+	}
+
+	if (window.navigator.userAgent.includes('Linux')) {
+		operatingSystemName = 'Linux';
+	}
+
+	return operatingSystemName;
+}
+
 function prepareDataSelectAttribute(string) {
 	return string.toLowerCase().trim().split(/[,\s]/g).join('-');
 }
 
-/**
- * Sets the initial active select for each select group (the first select in the group)
- */
-function setInitialSelection(selectContentList) {
-	selectContentList[0].classList.add(classNames.selectContentActive);
-}
-
-function changeSelection(event, selectMenuList, selectContentList) {
-	// Change the styles applied to the elements with class .docsify-select__content in this block according to the combination of selectMenu values
-	// set all selectContent values to nothing
-	// set current selectContent values with matching 'data-select-content' to selectContentActive
+function calculateSelectedContent(selectMenuList) {
 	let newSelection = '';
 	Array.prototype.forEach.call(selectMenuList, selectMenu => {
 		newSelection = (newSelection.length === 0) ?
 			prepareDataSelectAttribute(selectMenu.value) :
 			newSelection + '-' + prepareDataSelectAttribute(selectMenu.value);
 	});
+	return newSelection;
+}
 
+function setSelectedContent(newSelection, selectContentList) {
 	let contentMatch = false;
 	selectContentList.forEach(selectContent => {
 		selectContent.classList.remove(classNames.selectContentActive);
@@ -212,14 +259,57 @@ function changeSelection(event, selectMenuList, selectContentList) {
 			contentMatch = true;
 		}
 	});
+	return contentMatch;
+}
+
+function setDefaultContent(selectContentList) {
+	selectContentList.forEach(selectContent => {
+		if (selectContent.getAttribute('data-select-content') === 'docsify-select-default') {
+			selectContent.classList.add(classNames.selectContentActive);
+		}
+	});
+}
+
+/**
+ * Sets the initial active select for each select group. Either top option of each select or the matching operating-system value.
+ */
+function setInitialSelection(selectMenuList, selectContentList) {
+	// Override default values if necessary
+	if (settings.detectOperatingSystem.enabled) {
+		const currentOperatingSystem = getOperatingSystemName();
+
+		Array.prototype.forEach.call(selectMenuList, selectMenu => {
+			// If id = settings.detectOperatingSystem.menuId
+			if (selectMenu.id === settings.detectOperatingSystem.menuId) {
+				// Set the value to be the detected OS if in the list of options
+				Array.prototype.forEach.call(selectMenu.options, (option, index) => {
+					if (option.value.toString().trim().toLowerCase().includes(currentOperatingSystem.toLowerCase())) {
+						selectMenu.selectedIndex = index;
+					} else {
+						selectMenu.selectedIndex = 0;
+					}
+				});
+			}
+		});
+		const newSelection = calculateSelectedContent(selectMenuList);
+		const contentMatch = setSelectedContent(newSelection, selectContentList);
+		// If at this point no element has the 'data-select-content' value, then set the default if it exists
+		if (contentMatch === false) {
+			setDefaultContent(selectContentList);
+		}
+	}
+}
+
+function changeSelection(event, selectMenuList, selectContentList) {
+	// Change the styles applied to the elements with class .docsify-select__content in this block according to the combination of selectMenu values
+	// set all selectContent values to nothing
+	// set current selectContent values with matching 'data-select-content' to selectContentActive
+	const newSelection = calculateSelectedContent(selectMenuList);
+	const contentMatch = setSelectedContent(newSelection, selectContentList);
 
 	// If at this point no element has the 'data-select-content' value, then set the default if it exists
 	if (contentMatch === false) {
-		selectContentList.forEach(selectContent => {
-			if (selectContent.getAttribute('data-select-content') === 'docsify-select-default') {
-				selectContent.classList.add(classNames.selectContentActive);
-			}
-		});
+		setDefaultContent(selectContentList);
 	}
 }
 
@@ -249,16 +339,19 @@ function docsifySelect(hook, _) {
 		// TODO: see if can be moved to onClick event of entire content block (like in docsify-tabs)
 		if (hasSelect) {
 			const selectContainer = document.querySelector(`.${classNames.selectContainer}`);
-			const isSelectBlocks = selectContainer.querySelectorAll(`.${classNames.selectBlock}`);
-			if (isSelectBlocks.length !== 0) {
-				isSelectBlocks.forEach(selectBlock => {
+			const selectBlocks = selectContainer.querySelectorAll(`.${classNames.selectBlock}`);
+			if (selectBlocks.length !== 0) {
+				selectBlocks.forEach(selectBlock => {
 					const selectMenuList = selectBlock.querySelectorAll(`.${classNames.selectMenu}`);
 					const selectContentList = selectBlock.querySelectorAll(`.${classNames.selectContent}`);
-					setInitialSelection(selectContentList);
+					// Set initial selection based on MenuList & SelectContent in SelectBlock
+					setInitialSelection(selectMenuList, selectContentList);
 					selectMenuList.forEach(selectMenu => {
+						// Set change handler
 						selectMenu.addEventListener('change', event => {
-							// Change selection based on MenuList & SelectContent in Block
+							// Change selection for MenuList & SelectContent in SelectBlock
 							changeSelection(event, selectMenuList, selectContentList);
+							// TODO: Set all other menuSelections that match menuLabel and menuOption if settings.sync == true
 						});
 					});
 				});

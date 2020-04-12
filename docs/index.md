@@ -14,33 +14,20 @@ A [docsify.js](https://docsify.js.org) plugin for variably rendering content wit
 - Multi select menus
 - Complex multi-select menus with partial selections and default content
 - Compatible with [`docsify-tabs`](https://github.com/jhildenbiddle/docsify-tabs)
+- Automatically detect operating system and select options for menus with specific labels
 
 ## Demo
 
 ### Single Select
 
-something
-
 <!-- select:start -->
-<!-- select-menu-labels:testing menu labels in comments -->
+<!-- select-menu-labels: Operating System -->
 
 Common content can go here above the first heading in a section and be rendered for all selections!
 
-### --macOS--
+#### --macOS--
 
 macOS instructions here
-
-<!-- tabs:start -->
-
-#### **Git**
-
-Git instructions
-
-#### **Homebrew**
-
-Homebrew instructions
-
-<!-- tabs:end -->
 
 #### --Linux--
 
@@ -258,13 +245,157 @@ Linux + ZSH
 
 Options are set within the [`window.$docsify`](https://docsify.js.org/#/configuration) configuration under the `select` key.
 
+### Detect Operating System
+
+- Type: `object`
+- Accepts: `{ enabled: true|false, elementId: string }`
+- Default: `{ enabled: false, menuId: "operating-system" }`
+
+Detects the machine's Operating System and set any Menus with `id == operating-system` to the `value` matching the Operating System.
+
+IE: This select block has a `menu-label` of `Operating System`, which becomes `id: operating-system`. If an option `value` matches then it will be set automatically.
+
+```markdown
+<!-- select:start -->
+<!-- select-menu-labels: Operating System -->
+
+#### -- macOS --
+
+macOS
+
+#### -- Windows --
+
+Windows
+
+#### -- Linux --
+
+Linux
+
+<!-- select:end -->
+```
+
+**Configuration**
+
+```javascript
+window.$docsify = {
+  // ...
+  select: {
+    detectOperatingSystem: {
+      //defaults
+      enabled: false,
+      menuId: "operating-system"
+    }
+  }
+};
+```
+
+**Demo**
+
+The selected option should be your current operating system.
+
+<!-- select:start -->
+<!-- select-menu-labels: Operating System -->
+
+#### -- macOS --
+
+macOS
+
+#### -- Windows --
+
+Windows
+
+#### -- Linux --
+
+Linux
+
+<!-- select:end -->
+
+<!-- select:start -->
+<!-- select-menu-labels: Shell,Operating System -->
+
+The selection can be in any place of a multi-select group.
+
+### --Bash,macOS--
+
+macOS + Bash
+
+### --Fish,macOS--
+
+macOS + Fish
+
+### --ZSH,macOS--
+
+macOS + ZSH
+
+### --Bash,Linux--
+
+Linux + Bash
+
+### --Fish,Linux--
+
+Linux + Fish
+
+### --ZSH,Linux--
+
+Linux + ZSH
+
+<!-- select:end -->
+
+### Sync
+
+- Type: `object`
+- Accepts: `true|false`
+- Default: `true`
+
+Determines if menu option selections will be synced across menus with matching labels.
+
+**Configuration**
+
+```javascript
+window.$docsify = {
+  // ...
+  select: {
+    sync: {
+      enabled: true, // default
+  }
+};
+```
+
+**Demo**
+
+<!-- select:start -->
+<!-- select-menu-labels:Operating System -->
+
+#### --macOS--
+
+macOS instructions here
+
+#### --Linux--
+
+Linux instructions here
+
+<!-- select:end -->
+
+<!-- select:start -->
+<!-- select-menu-labels:Operating System -->
+
+#### --macOS--
+
+macOS instructions here
+
+#### --Linux--
+
+Linux instructions here
+
+<!-- select:end -->
+
 ### Theme
 
-- Type: `string|boolean`
-- Accepts: `'classic'`, `'material'`, `false`
+- Type: `string`
+- Accepts: `'classic'|'material'|'none'`
 - Default: `'classic'`
 
-Sets the tab theme. A value of `false` will indicate that no theme should be applied. Use `false when creating custom select themes.
+Sets the tab theme. A value of `'none'` will indicate that no theme should be applied. Use `'none'` when creating custom select themes.
 
 **Configuration**
 
@@ -429,6 +560,7 @@ Regular content here
 - [x] render initial selection
 - [x] ensure compatibility with [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs)
 - [ ] sync selection of menus with same id
+- [ ] automatically detect operating system and make selection of OS for all selects with label/id "operating-system"
 - [ ] select themes
   - [x] no theme
   - [ ] classic
@@ -436,7 +568,6 @@ Regular content here
 - [ ] live theme example
 - [ ] release a v0.1
 - [ ] bugfixes
-- [ ] automatically detect operating system and make selection of OS for all selects with label/id "operating-system"
 - [ ] tests (unit & e2e)
 - [ ] release a v1
 - [ ] custom theme for `docsify-select` docs site
