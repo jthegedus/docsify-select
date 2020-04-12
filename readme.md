@@ -16,6 +16,7 @@ A [docsify.js](https://docsify.js.org) plugin for variably rendering content wit
 - Multi select menus
 - Complex multi-select menus with partial selections and default content
 - Compatible with [`docsify-tabs`](https://github.com/jhildenbiddle/docsify-tabs)
+- Automatically detect operating system and select options for menus with specific labels
 
 ## [Documentation & Demos](https://jthegedus.github.io/docsify-select/)
 
