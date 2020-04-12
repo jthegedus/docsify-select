@@ -255,6 +255,23 @@ Detects the machine's Operating System and set any Menus with `id == operating-s
 
 IE: This select block has a `menu-label` of `Operating System`, which becomes `id: operating-system`. If an option `value` matches then it will be set automatically.
 
+**Configuration**
+
+```javascript
+window.$docsify = {
+  // ...
+  select: {
+    detectOperatingSystem: {
+      //defaults
+      enabled: false,
+      menuId: "operating-system"
+    }
+  }
+};
+```
+
+**Demos**
+
 ```markdown
 <!-- select:start -->
 <!-- select-menu-labels: Operating System -->
@@ -273,23 +290,6 @@ Linux
 
 <!-- select:end -->
 ```
-
-**Configuration**
-
-```javascript
-window.$docsify = {
-  // ...
-  select: {
-    detectOperatingSystem: {
-      //defaults
-      enabled: false,
-      menuId: "operating-system"
-    }
-  }
-};
-```
-
-**Demo**
 
 The selected option should be your current operating system.
 
@@ -310,34 +310,67 @@ Linux
 
 <!-- select:end -->
 
+```markdown
 <!-- select:start -->
 <!-- select-menu-labels: Shell,Operating System -->
 
-The selection can be in any place of a multi-select group.
+The Operating System select can be in any position of a multi-select group.
 
 ### --Bash,macOS--
 
-macOS + Bash
+Bash + macOS
 
 ### --Fish,macOS--
 
-macOS + Fish
+Fish + macOS
 
 ### --ZSH,macOS--
 
-macOS + ZSH
+ZSH + macOS
 
 ### --Bash,Linux--
 
-Linux + Bash
+Bash + Linux
 
 ### --Fish,Linux--
 
-Linux + Fish
+Fish + Linux
 
 ### --ZSH,Linux--
 
-Linux + ZSH
+ZSH + Linux
+
+<!-- select:end -->
+```
+
+<!-- select:start -->
+<!-- select-menu-labels: Shell,Operating System -->
+
+The Operating System select can be in any position of a multi-select group.
+
+### --Bash,macOS--
+
+Bash + macOS
+
+### --Fish,macOS--
+
+Fish + macOS
+
+### --ZSH,macOS--
+
+ZSH + macOS
+
+### --Bash,Linux--
+
+Bash + Linux
+
+### --Fish,Linux--
+
+Fish + Linux
+
+### --ZSH,Linux--
+
+ZSH + Linux
 
 <!-- select:end -->
 
@@ -362,6 +395,34 @@ window.$docsify = {
 ```
 
 **Demo**
+
+```markdown
+<!-- select:start -->
+<!-- select-menu-labels:Operating System -->
+
+#### --macOS--
+
+macOS instructions here
+
+#### --Linux--
+
+Linux instructions here
+
+<!-- select:end -->
+
+<!-- select:start -->
+<!-- select-menu-labels:Operating System -->
+
+#### --macOS--
+
+macOS instructions here
+
+#### --Linux--
+
+Linux instructions here
+
+<!-- select:end -->
+```
 
 <!-- select:start -->
 <!-- select-menu-labels:Operating System -->

@@ -274,10 +274,9 @@ function setDefaultContent(selectContentList) {
  * Sets the initial active select for each select group. Either top option of each select or the matching operating-system value.
  */
 function setInitialSelection(selectMenuList, selectContentList) {
-	// Override default values if necessary
 	if (settings.detectOperatingSystem.enabled) {
 		const currentOperatingSystem = getOperatingSystemName();
-
+		// Set the select options to be read later to produce the correct section selection.
 		Array.prototype.forEach.call(selectMenuList, selectMenu => {
 			// If id = settings.detectOperatingSystem.menuId
 			if (selectMenu.id === settings.detectOperatingSystem.menuId) {
