@@ -275,8 +275,8 @@ function setDefaultContent(selectContentList) {
  */
 function setInitialSelection(selectMenuList, selectContentList) {
 	if (settings.detectOperatingSystem.enabled) {
+		// Set the select menu options
 		const currentOperatingSystem = getOperatingSystemName();
-		// Set the select options to be read later to produce the correct section selection.
 		Array.prototype.forEach.call(selectMenuList, selectMenu => {
 			// If id = settings.detectOperatingSystem.menuId
 			if (selectMenu.id === settings.detectOperatingSystem.menuId) {
@@ -290,6 +290,8 @@ function setInitialSelection(selectMenuList, selectContentList) {
 				});
 			}
 		});
+
+		// Now do the same as changeSelection function
 		const newSelection = calculateSelectedContent(selectMenuList);
 		const contentMatch = setSelectedContent(newSelection, selectContentList);
 		// If at this point no element has the 'data-select-content' value, then set the default if it exists
