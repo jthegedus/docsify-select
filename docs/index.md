@@ -155,7 +155,7 @@ An HTML comment below the select block start: `<!-- select-menu-labels: MenuLabe
 
 ### Select Options
 
-Each markdown heading (`h1` through to `h6`) you wish to be a select option, must be surrounded on each side with 2 of the following symbols: `*`, `_`, `~` or `-`.
+Each markdown heading (`h1` through to `h6`) you wish to be a select option, must be surrounded on each side with 2 of the following symbols: `~` or `-`.
 
 Eg: `--macOS--` or `~~macOS~~`
 
@@ -620,8 +620,8 @@ Regular content here
 - [x] multi-select menu with partial selections & default values
 - [x] render initial selection
 - [x] ensure compatibility with [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs)
+- [x] automatically detect operating system and make selection of OS for all selects with label/id "operating-system"
 - [ ] sync selection of menus with same id
-- [ ] automatically detect operating system and make selection of OS for all selects with label/id "operating-system"
 - [ ] select themes
   - [x] no theme
   - [ ] classic
