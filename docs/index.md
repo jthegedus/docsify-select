@@ -276,6 +276,8 @@ window.$docsify = {
 <!-- select:start -->
 <!-- select-menu-labels: Operating System -->
 
+The selected option should be your current operating system.
+
 #### -- macOS --
 
 macOS
@@ -291,10 +293,10 @@ Linux
 <!-- select:end -->
 ```
 
-The selected option should be your current operating system.
-
 <!-- select:start -->
 <!-- select-menu-labels: Operating System -->
+
+The selected option should be your current operating system.
 
 #### -- macOS --
 
@@ -408,6 +410,10 @@ macOS instructions here
 
 Linux instructions here
 
+#### --Windows--
+
+Windows instructions here
+
 <!-- select:end -->
 
 <!-- select:start -->
@@ -420,6 +426,10 @@ macOS instructions here
 #### --Linux--
 
 Linux instructions here
+
+#### --Windows--
+
+Windows instructions here
 
 <!-- select:end -->
 ```
@@ -435,6 +445,10 @@ macOS instructions here
 
 Linux instructions here
 
+#### --Windows--
+
+Windows instructions here
+
 <!-- select:end -->
 
 <!-- select:start -->
@@ -447,6 +461,10 @@ macOS instructions here
 #### --Linux--
 
 Linux instructions here
+
+#### --Windows--
+
+Windows instructions here
 
 <!-- select:end -->
 
