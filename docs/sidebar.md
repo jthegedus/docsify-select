@@ -6,3 +6,8 @@
 - [![GitHub](https://icongr.am/simple/github.svg?color&size=16)jthegedus](https://github.com/jthegedus/)
 - [![Twitter](https://icongr.am/simple/twitter.svg?colored&size=16)@jthegedus](http://twitter.com/jthegedus)
 - [![Medium](https://icongr.am/simple/medium.svg?color&size=16)@jthegedus](https://medium.com/@jthegedus)
+- **Credit**
+- [![GitHub](https://icongr.am/simple/github.svg?color&size=16)Contributors](https://github.com/jthegedus/docsify-select/graphs/contributors)
+- **Inspiration**
+- [![GitHub](https://icongr.am/simple/github.svg?color&size=16)jhildenbiddle](https://github.com/jhildenbiddle/docsify-tabs)
+- [![Twitter](https://icongr.am/simple/twitter.svg?colored&size=16)@jhildenbiddle](http://twitter.com/jhildenbiddle)

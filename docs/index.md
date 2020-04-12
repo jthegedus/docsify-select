@@ -382,7 +382,7 @@ ZSH + Linux
 - Accepts: `true|false`
 - Default: `true`
 
-Determines if menu option selections will be synced across menus with matching labels.
+If multiple select menus share the same label (id), and the newly selected option is in another label matching menu's options, then the menu selections will be synced across select groups.
 
 **Configuration**
 
@@ -639,7 +639,7 @@ Regular content here
 - [x] render initial selection
 - [x] ensure compatibility with [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs)
 - [x] automatically detect operating system and make selection of OS for all selects with label/id "operating-system"
-- [ ] sync selection of menus with same id
+- [x] sync selection of menus with same id
 - [ ] select themes
   - [x] no theme
   - [ ] classic

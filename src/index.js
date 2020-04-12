@@ -314,6 +314,35 @@ function changeSelection(event, selectMenuList, selectContentList) {
 	}
 }
 
+function changeAllSyncedSelections(event, selectBlocks) {
+	// Get selectMenuId
+	const selectMenuId = event.target.id;
+	const selectOption = event.target.value;
+
+	// For each selectBlock, if it contains a menu matching selectMenuId
+	selectBlocks.forEach(selectBlock => {
+		const selectContentList = selectBlock.querySelectorAll(`.${classNames.selectContent}`);
+		const selectMenuList = selectBlock.querySelectorAll(`.${classNames.selectMenu}`);
+		selectMenuList.forEach(selectMenu => {
+			if (selectMenu.id === selectMenuId) {
+				Array.prototype.forEach.call(selectMenu.options, (option, index) => {
+					if (option.value === selectOption) {
+						selectMenu.selectedIndex = index;
+					}
+				});
+			}
+		});
+
+		// Now do the same as changeSelection function
+		const newSelection = calculateSelectedContent(selectMenuList);
+		const contentMatch = setSelectedContent(newSelection, selectContentList);
+		// If at this point no element has the 'data-select-content' value, then set the default if it exists
+		if (contentMatch === false) {
+			setDefaultContent(selectContentList);
+		}
+	});
+}
+
 // Plugin
 // =============================================================================
 function docsifySelect(hook, _) {
@@ -350,9 +379,12 @@ function docsifySelect(hook, _) {
 					selectMenuList.forEach(selectMenu => {
 						// Set change handler
 						selectMenu.addEventListener('change', event => {
-							// Change selection for MenuList & SelectContent in SelectBlock
-							changeSelection(event, selectMenuList, selectContentList);
-							// TODO: Set all other menuSelections that match menuLabel and menuOption if settings.sync == true
+							if (settings.sync) {
+								changeAllSyncedSelections(event, selectBlocks);
+							} else {
+								// Change selection for MenuList & SelectContent in SelectBlock
+								changeSelection(event, selectMenuList, selectContentList);
+							}
 						});
 					});
 				});
