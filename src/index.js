@@ -55,7 +55,7 @@ const regex = {
 };
 
 const settings = {
-	sync: true,
+	sync: false,
 	detectOperatingSystem: {enabled: false, menuId: 'operating-system'},
 	theme: 'classic'
 };

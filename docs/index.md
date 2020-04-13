@@ -378,9 +378,9 @@ ZSH + Linux
 
 ### Sync
 
-- Type: `object`
+- Type: `boolean`
 - Accepts: `true|false`
-- Default: `true`
+- Default: `false`
 
 If multiple select menus share the same label (id), and the newly selected option is in another label matching menu's options, then the menu selections will be synced across select groups.
 
@@ -390,8 +390,7 @@ If multiple select menus share the same label (id), and the newly selected optio
 window.$docsify = {
   // ...
   select: {
-    sync: {
-      enabled: true, // default
+    sync: false // default
   }
 };
 ```
