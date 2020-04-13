@@ -502,7 +502,7 @@ TODO: example with themes
 
 ## Theme Properties
 
-Theme properties allow you to customize tab styles without writing complex CSS. The following list contains the default theme values.
+Theme properties allow you to customize tab styles without writing complex CSS. The following list contains the default theme values:
 
 <!-- [vars.css](https://raw.githubusercontent.com/jthegedus/docsify-select/master/src/vars.css ':include :type:cod') -->
 
@@ -515,6 +515,23 @@ To set theme properties, add a `<style>` element to your `index.html` file after
     --docsifyselect-option-highlight-color: purple;
   }
 </style>
+```
+
+The css classes apply to the following HTML structure of the parsed markdown:
+
+```
+content
+|
++ select-select             (select block)
+  |
+  + select-group            (select menu group)
+  | |
+  | + select-menu           (select menu. 1 or more)
+  |   |
+  |   + select__option      (select option. 1 or more)
+  |
+  + select__content         (content. 1 or more)
+  + select__content--active (active content. exactly 1)
 ```
 
 ## With docsify-tabs
