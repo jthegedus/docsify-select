@@ -470,7 +470,7 @@ Windows instructions here
 ### theme
 
 - Type: `string`
-- Accepts: `'classic'|'material'|'none'`
+- Accepts: `'classic'|'none'`
 - Default: `'classic'`
 
 Sets the tab theme. A value of `'none'` will indicate that no theme should be applied. Use `'none'` when creating custom select themes.
@@ -488,13 +488,10 @@ window.$docsify = {
 
 **Demo**
 
-<label data-class-target="label + .docsify-select" data-class-remove="docsify-select--material" data-class-add="docsify-select--classic">
+<label data-class-target="label + .docsify-select" data-class-add="docsify-select--classic">
   <input name="theme" type="radio" value="classic" checked="checked"> Classic
 </label>
-<label data-class-target="label + .docsify-select" data-class-remove="docsify-select--classic" data-class-add="docsify-select--material">
-  <input name="theme" type="radio" value="material"> Material
-</label>
-<label data-class-target="label + .docsify-select" data-class-remove="docsify-select--classic docsify-select--material">
+<label data-class-target="label + .docsify-select" data-class-remove="docsify-select--classic">
   <input name="theme" type="radio" value="none"> No Theme
 </label>
 
@@ -672,7 +669,6 @@ Regular content here
 - [ ] select themes
   - [x] no theme
   - [ ] classic
-  - [ ] material
 - [ ] live theme example
 - [ ] release a v0.1
 - [ ] bugfixes
