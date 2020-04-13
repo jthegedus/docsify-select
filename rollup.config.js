@@ -4,7 +4,6 @@ const path = require('path');
 
 import babel from 'rollup-plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-// Import {eslint} from 'rollup-plugin-eslint';
 import json from '@rollup/plugin-json';
 import merge from 'lodash.merge';
 import postcss from 'rollup-plugin-postcss';
@@ -16,7 +15,7 @@ import pkg from './package.json';
 // =============================================================================
 // Copyright
 const currentYear = (new Date()).getFullYear();
-const releaseYear = 2018;
+const releaseYear = 2020;
 
 // Output
 const entryFile = path.resolve(__dirname, 'src', 'index.js');
@@ -33,11 +32,6 @@ const bannerData = [
 
 // Plugins
 const pluginSettings = {
-	// eslint: {
-	// 	exclude: ['node_modules/**', './package.json', './src/**/*.{css,scss}'],
-	// 	throwOnWarning: false,
-	// 	throwOnError: true
-	// },
 	babel: {
 		exclude: ['node_modules/**'],
 		presets: [
