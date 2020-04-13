@@ -14,6 +14,7 @@ const commentReplaceMark = 'select:replace';
 const classNames = {
 	selectContainer: 'content',
 	selectBlock: 'docsify-select',
+	selectGroup: 'docsify-select-group',
 	selectMenu: 'docsify-select-menu',
 	selectOption: 'docsify-select__option',
 	selectContent: 'docsify-select__content',
@@ -83,7 +84,7 @@ function renderSelectGroupsStage1(content) {
 		return codeMarker;
 	});
 
-	const selectTheme = settings.theme ? `${classNames.selectBlock}--${settings.theme}` : '';
+	const selectTheme = settings.theme === 'none' ? '' : `${classNames.selectBlock}--${settings.theme}`;
 
 	let selectBlockMatch;
 	let selectMatch;
@@ -147,7 +148,7 @@ function renderSelectGroupsStage1(content) {
 				];
 			});
 
-			selectStartReplacement = `<!-- ${commentReplaceMark} <div class="${[classNames.selectBlock, selectTheme].join(' ')}"> ${selectGroups.toString().split(',').join(' ')} -->`;
+			selectStartReplacement = `<!-- ${commentReplaceMark} <div class="${[classNames.selectBlock, selectTheme].join(' ')}"> <div class="${classNames.selectGroup}"> ${selectGroups.toString().split(',').join(' ')} </div> -->`;
 			selectEndReplacement = `\n${selectBlockIndent}<!-- ${commentReplaceMark} </div> -->`;
 		}
 
