@@ -670,13 +670,12 @@ Regular content here
   - [x] no theme
   - [ ] classic
 - [ ] live theme example
-- [ ] release a v0.1
+- [ ] release a v1
+- [ ] GitHub Actions for release/changelog
 - [ ] bugfixes
 - [ ] tests (unit & e2e)
-- [ ] release a v1
 - [ ] custom theme for `docsify-select` docs site
 - [ ] GitHub repo social preview
-- [ ] selectComment definitions to allow more freedom other plugins (`docsify-tabs`)
 - [ ] favicon
 
 ## Support
