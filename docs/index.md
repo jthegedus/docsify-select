@@ -245,7 +245,7 @@ Linux + ZSH
 
 Options are set within the [`window.$docsify`](https://docsify.js.org/#/configuration) configuration under the `select` key.
 
-### Detect Operating System
+### detect operating system
 
 - Type: `object`
 - Accepts: `{ enabled: true|false, elementId: string }`
@@ -376,7 +376,7 @@ ZSH + Linux
 
 <!-- select:end -->
 
-### Sync
+### sync
 
 - Type: `boolean`
 - Accepts: `true|false`
@@ -467,7 +467,7 @@ Windows instructions here
 
 <!-- select:end -->
 
-### Theme
+### theme
 
 - Type: `string`
 - Accepts: `'classic'|'material'|'none'`
@@ -500,9 +500,22 @@ window.$docsify = {
 
 TODO: example with themes
 
-## Themes
+## Theme Properties
 
-<!-- explain your plugins theme customisations here -->
+Theme properties allow you to customize tab styles without writing complex CSS. The following list contains the default theme values.
+
+<!-- [vars.css](https://raw.githubusercontent.com/jthegedus/docsify-select/master/src/vars.css ':include :type:cod') -->
+
+To set theme properties, add a `<style>` element to your `index.html` file after all other stylesheets and set properties within a `:root` selector.
+
+```html
+<style>
+  :root {
+    --docsifyselect-border-color: #ededed;
+    --docsifyselect-option-highlight-color: purple;
+  }
+</style>
+```
 
 ## With docsify-tabs
 
