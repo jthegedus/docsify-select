@@ -1,0 +1,22 @@
+@import "./vars.css";
+
+// # Base
+.docsify-select__content {
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  height: 0;
+  width: 100%;
+}
+.docsify-select__content--active {
+  visibility: visible;
+  position: relative;
+  overflow: auto;
+  height: auto;
+}
+
+// # Themes
+
+// ## Classic
+
+// ## Material

@@ -1,7 +1,7 @@
 import {version as pkgVersion} from '../package.json';
 
 // eslint-disable-next-line import/no-unassigned-import
-import './styles.css';
+import './styles.scss';
 
 // As
 // let css = fs.readFileSync('./style.css'); // <-- The css reader

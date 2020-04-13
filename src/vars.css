@@ -1,0 +1,25 @@
+root {
+  /* Select Groups */
+  --docsifyselect-group-border-color: #ededed;
+  --docsifyselect-group-border-px: 1px;
+  --docsifyselect-group-border-radius-px: ;
+  --docsifyselect-group-margin: 1.5em 0;
+
+  /* Select Menus */
+  --docsifyselect-menu-background: #f8f8f8;
+  --docsifyselect-menu-background--active: var(
+    --docsifyselect-content-background
+  );
+  --docsifyselect-menu-color: #999;
+  --docsifyselect-menu-color--active: inherit;
+  --docsifyselect-menu-highlight-px: 3px;
+  --docsifyselect-menu-highlight-color: var(--theme-color, currentColor);
+  --docsifyselect-menu-padding: 0.6em 1em;
+
+  /* Select Options */
+  --docsifyselect-option-color: #999;
+
+  /* Select Content */
+  --docsifyselect-content-background: inherit;
+  --docsifyselect-content-padding: 1.5rem;
+}
