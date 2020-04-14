@@ -489,13 +489,42 @@ window.$docsify = {
 **Demo**
 
 <label data-class-target="label + .docsify-select" data-class-add="docsify-select--classic">
-  <input name="theme" type="radio" value="classic" checked="checked"> Classic
+  <input name="theme" type="radio" value="classic" checked="checked"> <code>classic</code>
 </label>
 <label data-class-target="label + .docsify-select" data-class-remove="docsify-select--classic">
-  <input name="theme" type="radio" value="none"> No Theme
+  <input name="theme" type="radio" value="none"> <code>none</code>
 </label>
 
-TODO: example with themes
+<!-- select:start -->
+<!-- select-menu-labels: Shell,Operating System -->
+
+The Operating System select can be in any position of a multi-select group.
+
+### --Bourne again shell Bourne again shell,macOS--
+
+Bash + macOS
+
+### --Fish,macOS--
+
+Fish + macOS
+
+### --ZSH,macOS--
+
+ZSH + macOS
+
+### --Bourne again shell Bourne again shell,Linux--
+
+Bash + Linux
+
+### --Fish,Linux--
+
+Fish + Linux
+
+### --ZSH,Linux--
+
+ZSH + Linux
+
+<!-- select:end -->
 
 ## Theme Properties
 
