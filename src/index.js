@@ -15,6 +15,7 @@ const classNames = {
 	selectContainer: 'content',
 	selectBlock: 'docsify-select',
 	selectGroup: 'docsify-select-group',
+	selectMenuContainer: 'docsify-select-menu-container',
 	selectMenu: 'docsify-select-menu',
 	selectOption: 'docsify-select__option',
 	selectContent: 'docsify-select__content',
@@ -144,7 +145,7 @@ function renderSelectGroupsStage1(content) {
 			selectMenuLabels.forEach((selectMenuLabel, index) => {
 				selectGroups = [
 					...selectGroups,
-					`<label for="${selectMenuLabel.toLowerCase()}">${selectMenuLabel}</label> <select class="${classNames.selectMenu}" id="${selectMenuLabel.toLowerCase().replace(/\s/g, '-')}"> ${Object.values(selectGroupOptions[index])} </select>`
+					`<div class="${classNames.selectMenuContainer}"> <label for="${selectMenuLabel.toLowerCase()}">${selectMenuLabel}</label> <select class="${classNames.selectMenu}" id="${selectMenuLabel.toLowerCase().replace(/\s/g, '-')}"> ${Object.values(selectGroupOptions[index])} </select> </div>`
 				];
 			});
 
