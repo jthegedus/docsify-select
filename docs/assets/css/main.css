@@ -1,0 +1,3 @@
+label[data-class-target="label + .docsify-tabs"] {
+  margin-right: 0.8em;
+}
