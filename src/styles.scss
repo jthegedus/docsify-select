@@ -1,6 +1,16 @@
 @import "./vars.css";
 
 // # Base
+.docsify-select-menu {
+  width: var(--docisfyselect-menu-width);
+}
+
+.docsify-select-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .docsify-select__content {
   visibility: hidden;
   position: absolute;
@@ -16,7 +26,66 @@
 }
 
 // # Themes
+// shared across themes. TODO: editable variables go here.
+[class*="docsify-select--"] {
+  .docsify-select-menu {
+    width: var(--docisfyselect-menu-width);
+  }
+}
 
 // ## Classic
+.docsify-select--classic {
+  .docsify-select-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-// ## Material
+  .docsify-select-menu-container {
+    margin: 8px 4px 0 0;
+  }
+
+  .docsify-select-menu-container label {
+    color: var(--docsifyselect-menu-color);
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--docsifyselect-menu-font-family);
+    letter-spacing: 0.3px;
+    line-height: 19.5px;
+    margin: var(--docsifyselect-menu-label-margin);
+    text-transform: uppercase;
+  }
+
+  .docsify-select-menu {
+    background: url("data:image/svg+xml;utf8,<svg fill='rgb(74, 85, 104)' height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'></path></svg>")
+      no-repeat 95%;
+    border-color: var(--docsifyselect-menu-border-color);
+    border-radius: var(--docsifyselect-menu-border-radius);
+    border-style: solid;
+    border-width: var(--docsifyselect-menu-border-width);
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    box-shadow: var(--docsifyselect-menu-box-shadow);
+    box-sizing: border-box;
+    color: var(--docsifyselect-menu-color);
+    display: block;
+    font-family: var(--docsifyselect-menu-font-family);
+    font-size: var(--docsifyselect-menu-font-size);
+    line-height: var(--docsifyselect-menu-line-height);
+    margin: var(--docsifyselect-menu-margin);
+    padding: var(--docsifyselect-menu-padding);
+    text-align: start;
+    text-transform: none;
+    width: var(--docisfyselect-menu-width);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .docsify-select__content--active {
+    background: var(--docsifyselect-content-background);
+  }
+}
