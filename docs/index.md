@@ -137,10 +137,20 @@ It is encouraged to have specific content for each heading to not confuse users.
 <script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
 ```
 
-2. Set your configuration options in the Docsify settings in your `index.html`
+2. Set your configuration options in the Docsify settings in your `index.html`. Below are the default values:
 
-```html
-window.$docsify = { // ... select: { theme: 'classic' } };
+```
+window.$docsify = {
+  // ...
+  select: {
+    detectOperatingSystem: {
+      enabled: false,
+      menuId: "operating-system"
+    },
+    sync: false,
+    theme: 'classic'
+  }
+};
 ```
 
 ## Usage
@@ -500,7 +510,7 @@ window.$docsify = {
 
 The Operating System select can be in any position of a multi-select group.
 
-### --Bourne again shell Bourne again shell,macOS--
+### --Bash with a really long entry to show that the text doesn't overflow the chevron,macOS--
 
 Bash + macOS
 
@@ -512,7 +522,7 @@ Fish + macOS
 
 ZSH + macOS
 
-### --Bourne again shell Bourne again shell,Linux--
+### --Bash with a really long entry to show that the text doesn't overflow the chevron,Linux--
 
 Bash + Linux
 
@@ -530,15 +540,15 @@ ZSH + Linux
 
 Theme properties allow you to customize tab styles without writing complex CSS. The following list contains the default theme values:
 
-<!-- [vars.css](https://raw.githubusercontent.com/jthegedus/docsify-select/master/src/vars.css ':include :type:cod') -->
+[vars.css](https://raw.githubusercontent.com/jthegedus/docsify-select/master/src/vars.css ":include :type:code")
 
 To set theme properties, add a `<style>` element to your `index.html` file after all other stylesheets and set properties within a `:root` selector.
 
 ```html
 <style>
   :root {
-    --docsifyselect-border-color: #ededed;
-    --docsifyselect-option-highlight-color: purple;
+    --docsifyselect-menu-background: #ededed;
+    --docsifyselect-menu-border-color: purple;
   }
 </style>
 ```
@@ -552,9 +562,11 @@ content
   |
   + select-group            (select menu group)
   | |
-  | + select-menu           (select menu. 1 or more)
+  | + select-menu-container (1 or more)
   |   |
-  |   + select__option      (select option. 1 or more)
+  |   + select-menu           (select menu)
+  |     |
+  |     + select__option      (select option)
   |
   + select__content         (content. 1 or more)
   + select__content--active (active content. exactly 1)
