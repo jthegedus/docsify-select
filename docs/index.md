@@ -134,7 +134,7 @@ It is encouraged to have specific content for each heading to not confuse users.
 <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
 
 <!-- docsify-select (latest v1.x.x) -->
-<script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-select@0"></script>
 ```
 
 2. Set your configuration options in the Docsify settings in your `index.html`. Below are the default values:
