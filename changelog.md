@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.2.2 (2020-04-15)
+
+documentation:
+
+- fix docsify-select install version in instructions
+
+misc:
+
+- add changelog
+- update package.json keywords
+
 ## 0.2.1 (2020-04-15)
 
 bugfix(es):
