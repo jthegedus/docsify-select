@@ -24,3 +24,10 @@ Edit files in `src` and see the browser automatically reload on file change.
 
 - `css` to be compatible with [`docsify-themable`](https://github.com/jhildenbiddle/docsify-themeable)
 - themes? I am open to suggestions
+
+## Roadmap and Improvements
+
+- [ ] tests (unit & e2e)
+- [ ] custom theme for `docsify-select` docs site
+- [ ] GitHub repo social preview
+- [ ] favicon
