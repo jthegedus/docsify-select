@@ -1,6 +1,6 @@
 {
   "name": "docsify-select",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A docsify.js plugin for variably rendering content with html select menus from markdown",
   "author": "James Hegedus",
   "license": "MIT",
