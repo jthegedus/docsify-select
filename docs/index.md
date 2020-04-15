@@ -715,6 +715,7 @@ Regular content here
 - [x] GitHub Actions for release
 - [ ] demo gif in repo readme
 - [ ] release a v1
+- [ ] add to [`awesome-docsify`](https://github.com/docsifyjs/awesome-docsify)
 - [ ] bugfixes
 - [ ] tests (unit & e2e)
 - [ ] custom theme for `docsify-select` docs site
