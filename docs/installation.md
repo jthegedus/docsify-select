@@ -28,21 +28,57 @@ window.$docsify = {
 
 ## Basics
 
-### Select Block
+**Select Block**
 
 A select block is started with `<!-- select:start -->` and ends with `<!-- select:end -->`
 
-### Select Menu Labels
+**Select Menu Labels**
 
 An HTML comment below the select block start: `<!-- select-menu-labels: MenuLabel1 -->`
 
 !> If your page isn't loading you likely forgot a label
 
-### Select Options
+**Select Options**
 
 Each markdown heading (`h1` through to `h6`) you wish to be a select option, must be surrounded on each side with 2 of the following symbols: `~` or `-`.
 
 Eg: `# --macOS--` or `# ~~macOS~~`
+
+The first Option is selected by default unless some other [configuration](configuration) comes into play.
+
+### Example
+
+```markdown
+<!-- select:start -->
+<!-- select-menu-labels: Operating System -->
+
+Common content can go here above the first heading in a section and be rendered for all selections!
+
+#### --macOS--
+
+macOS instructions here
+
+#### --Linux--
+
+Linux instructions here
+
+<!-- select:end -->
+```
+
+<!-- select:start -->
+<!-- select-menu-labels: Operating System -->
+
+Common content can go here above the first heading in a section and be rendered for all selections!
+
+#### --macOS--
+
+macOS instructions here
+
+#### --Linux--
+
+Linux instructions here
+
+<!-- select:end -->
 
 ### Mulitple Select Menus
 
