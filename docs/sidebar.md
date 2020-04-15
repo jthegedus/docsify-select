@@ -1,4 +1,9 @@
-- [Documentation](/)
+- [Introduction](/)
+- [Installation](installation)
+- [Configuration](configuration)
+- [Usage](usage)
+- [Changelog](changelog)
+- [Contributing](contributing)
 - **Docsify Select**
 - [![GitHub](https://icongr.am/simple/github.svg?color&size=16)GitHub](https://github.com/jthegedus/docsify-select)
 - [![NPM](https://icongr.am/simple/npm.svg?colored&size=16)npm](https://www.npmjs.com/package/docsify-select)
