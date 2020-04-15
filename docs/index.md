@@ -701,23 +701,8 @@ Regular content here
 
 ## Roadmap and Improvements
 
-- [x] single select menu
-- [x] multi-select menu
-- [x] multi-select menu with partial selections & default values
-- [x] render initial selection
-- [x] ensure compatibility with [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs)
-- [x] automatically detect operating system and make selection of OS for all selects with label/id "operating-system"
-- [x] sync selection of menus with same id
-- [x] select themes
-  - [x] no theme
-  - [x] classic
-- [x] live theme example
-- [ ] release a v0.x.x
-- [x] GitHub Actions for release
-- [ ] demo gif in repo readme
-- [ ] release a v1
+- [ ] improve contributing guide
 - [ ] add to [`awesome-docsify`](https://github.com/docsifyjs/awesome-docsify)
-- [ ] bugfixes
 - [ ] tests (unit & e2e)
 - [ ] custom theme for `docsify-select` docs site
 - [ ] GitHub repo social preview
