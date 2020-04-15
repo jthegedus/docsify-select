@@ -271,7 +271,7 @@ This is some regular content contained in a `docsify-select` selection.
 
 ### --Embed Files Content--
 
-[Embed Files Test](sections/test-includes.md ":include")
+[Embed Files Test](sections/test-includes.md ':include')
 
 <!-- select:end -->
 
@@ -287,7 +287,7 @@ This is some regular content contained in a `docsify-select` selection.
 
 ### --Embed Files Content--
 
-[Embed Files Test](sections/test-includes.md ":include")
+[Embed Files Test](sections/test-includes.md ':include')
 
 <!-- select:end -->
 ```
