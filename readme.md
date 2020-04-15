@@ -6,7 +6,7 @@
 
 A [docsify.js](https://docsify.js.org) plugin for variably rendering content with HTML select menus defined in markdown.
 
-<!-- insert gif of demo here -->
+![docsify select demo](docs/assets/images/docsify-select-demo.gif "docsify select demo")
 
 </div>
 
