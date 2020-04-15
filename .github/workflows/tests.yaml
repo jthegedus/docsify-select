@@ -1,4 +1,4 @@
-name: List and Unit Tests
+name: Lint and Unit Tests
 on: [pull_request, push]
 
 jobs:
