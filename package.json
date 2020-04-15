@@ -1,10 +1,10 @@
 {
   "name": "docsify-select",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A docsify.js plugin for variably rendering content with html select menus from markdown",
   "author": "James Hegedus",
   "license": "MIT",
-  "homepage": "https://github.com/jthegedus/docsify-select#readme",
+  "homepage": "https://jthegedus.github.io/docsify-select/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jthegedus/docsify-select.git"
@@ -18,8 +18,8 @@
     "docsify-plugin",
     "documentation"
   ],
-  "main": "dist/index.min.js",
-  "unpkg": "dist/index.min.js",
+  "main": "dist/docsify-select.min.js",
+  "unpkg": "dist/docsify-select.min.js",
   "files": [
     "dist"
   ],
