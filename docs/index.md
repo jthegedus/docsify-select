@@ -707,12 +707,14 @@ Regular content here
 - [x] ensure compatibility with [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs)
 - [x] automatically detect operating system and make selection of OS for all selects with label/id "operating-system"
 - [x] sync selection of menus with same id
-- [ ] select themes
+- [x] select themes
   - [x] no theme
-  - [ ] classic
-- [ ] live theme example
+  - [x] classic
+- [x] live theme example
+- [ ] release a v0.x.x
+- [x] GitHub Actions for release
+- [ ] demo gif in repo readme
 - [ ] release a v1
-- [ ] GitHub Actions for release/changelog
 - [ ] bugfixes
 - [ ] tests (unit & e2e)
 - [ ] custom theme for `docsify-select` docs site
