@@ -3,13 +3,6 @@ import {version as pkgVersion} from '../package.json';
 // eslint-disable-next-line import/no-unassigned-import
 import './styles.scss';
 
-// As
-// let css = fs.readFileSync('./style.css'); // <-- The css reader
-// let style = document.createElement('style');
-// style.type = 'text/css';
-// style.append(document.createTextNode(css));
-// document.head.append(style);
-// As
 const commentReplaceMark = 'select:replace';
 const classNames = {
 	selectContainer: 'content',
