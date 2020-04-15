@@ -1,7 +1,8 @@
 name: Release
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -20,6 +21,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
