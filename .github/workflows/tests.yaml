@@ -1,9 +1,9 @@
-name: Unit Tests
+name: List and Unit Tests
 on: [pull_request, push]
 
 jobs:
   unit-test:
-    name: "test: unit tests"
+    name: "test: lint"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
