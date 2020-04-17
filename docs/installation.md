@@ -88,7 +88,7 @@ Select Options must then also be a comma-separated list of the same length, wher
 
 ```markdown
 <!-- select:start -->
-<!-- select-menu-labels: Operating System,Shell -->
+<!-- select-menu-labels: Operating System,Installation Method -->
 
 ### --macOS,Git--
 
@@ -106,7 +106,7 @@ Linux + Git
 ```
 
 <!-- select:start -->
-<!-- select-menu-labels: Operating System,Shell -->
+<!-- select-menu-labels: Operating System,Installation Method -->
 
 ### --macOS,Git--
 
@@ -130,7 +130,7 @@ Default content can be shown when no matching selection exists for the combinati
 
 ```markdown
 <!-- select:start -->
-<!-- select-menu-labels: Operating System,Shell -->
+<!-- select-menu-labels: Operating System,Installation Method -->
 
 ### --macOS,Git--
 
@@ -152,7 +152,7 @@ No selection for this combination. Sorry!
 ```
 
 <!-- select:start -->
-<!-- select-menu-labels: Operating System,Shell -->
+<!-- select-menu-labels: Operating System,Installation Method -->
 
 ### --macOS,Git--
 
