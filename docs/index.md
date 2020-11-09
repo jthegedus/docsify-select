@@ -76,4 +76,4 @@ Linux + ZSH
 
 ## License
 
-[MIT License](https://github.com/jthegedus/docsify-select/blob/master/license)
+[MIT License](https://github.com/jthegedus/docsify-select/blob/main/license)

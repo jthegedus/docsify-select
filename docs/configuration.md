@@ -23,9 +23,9 @@ window.$docsify = {
     detectOperatingSystem: {
       //defaults
       enabled: false,
-      menuId: "operating-system"
-    }
-  }
+      menuId: "operating-system",
+    },
+  },
 };
 ```
 
@@ -164,8 +164,8 @@ The syncing occurs for all menus and options across the whole page. Combined wit
 window.$docsify = {
   // ...
   select: {
-    sync: false // default
-  }
+    sync: false, // default
+  },
 };
 ```
 
@@ -267,8 +267,8 @@ Sets the select menu theme. A value of `'none'` will indicate that no theme shou
 window.$docsify = {
   // ...
   select: {
-    theme: "classic" // default
-  }
+    theme: "classic", // default
+  },
 };
 ```
 
@@ -320,7 +320,7 @@ ZSH + Linux
 
 Theme properties allow you to customize tab styles without writing complex CSS. The following list contains the default theme values:
 
-[vars.css](https://raw.githubusercontent.com/jthegedus/docsify-select/master/src/vars.css ":include :type:code")
+[vars.css](https://raw.githubusercontent.com/jthegedus/docsify-select/main/src/vars.css ":include :type:code")
 
 To set theme properties, add a `<style>` element to your `index.html` file after all other stylesheets and set properties within a `:root` selector.
 
