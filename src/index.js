@@ -52,7 +52,8 @@ const regex = {
 const settings = {
 	sync: false,
 	detectOperatingSystem: {enabled: false, menuId: 'operating-system'},
-	theme: 'classic'
+	theme: 'classic',
+	selected: {}
 };
 
 // Functions
@@ -309,10 +310,9 @@ function changeSelection(event, selectMenuList, selectContentList) {
 	}
 }
 
-function changeAllSyncedSelections(event, selectBlocks) {
-	// Get selectMenuId
-	const selectMenuId = event.target.id;
-	const selectOption = event.target.value;
+function changeAllSyncedSelections(selectBlocks, selectMenuId, selectOption) {
+	// Set selected again to persist across page jumps.
+	settings.selected[selectMenuId] = selectOption;
 
 	// For each selectBlock, if it contains a menu matching selectMenuId
 	selectBlocks.forEach(selectBlock => {
@@ -366,6 +366,8 @@ function docsifySelect(hook, _) {
 			const selectContainer = document.querySelector(`.${classNames.selectContainer}`);
 			const selectBlocks = selectContainer.querySelectorAll(`.${classNames.selectBlock}`);
 			if (selectBlocks.length !== 0) {
+				// Set preselected selections from settings.
+				Object.keys(settings.selected).forEach(x => changeAllSyncedSelections(selectBlocks, x, settings.selected[x]));
 				selectBlocks.forEach(selectBlock => {
 					const selectMenuList = selectBlock.querySelectorAll(`.${classNames.selectMenu}`);
 					const selectContentList = selectBlock.querySelectorAll(`.${classNames.selectContent}`);
@@ -375,7 +377,7 @@ function docsifySelect(hook, _) {
 						// Set change handler
 						selectMenu.addEventListener('change', event => {
 							if (settings.sync) {
-								changeAllSyncedSelections(event, selectBlocks);
+								changeAllSyncedSelections(selectBlocks, event.target.id, event.target.value);
 							} else {
 								// Change selection for MenuList & SelectContent in SelectBlock
 								changeSelection(event, selectMenuList, selectContentList);
