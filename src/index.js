@@ -46,11 +46,18 @@ const regex = {
 	// 0: Match
 	// 1: Option: #### --Label-- OR #### ~~Label~~
 	// 2: Content
-	selectHeadingMarkup: /[\r\n]*(\s*)#{1,6}\s*[~-]{2}\s*(.*[^\s])\s*[~-]{2}[\r\n]+([\s\S]*?)(?=#{1,6}\s*[~-]{2}|<!-+\s+select:\s*?end\s+-+>)/m
+	selectHeadingMarkup: /[\r\n]*(\s*)#{1,6}\s*[~-]{2}\s*(.*[^\s])\s*[~-]{2}[\r\n]+([\s\S]*?)(?=#{1,6}\s*[~-]{2}|<!-+\s+select:\s*?end\s+-+>)/m,
+
+	// Matches select option and content
+	// 0: Match
+	// 1: Option: #### Label <!-- selection-option -->
+	// 2: Content
+	selectHeadingComment: /[\r\n]*(\s*)#{1,6}\s*(.*?)\s*<!-+\s+select-option\s+-+>[\r\n]+([\s\S]*?)(?=#{1,6}\s*[^\r\n]*<!-+\s+select-option\s+-+>|<!-+\s+select:\s*?end\s+-+>)/m
 };
 
 const settings = {
 	sync: false,
+	useSelectHeadingComment: false,
 	detectOperatingSystem: {enabled: false, menuId: 'operating-system'},
 	theme: 'classic'
 };
@@ -403,6 +410,11 @@ if (window) {
 			settings[key] = window.$docsify.select[key];
 		}
 	});
+
+	if (settings.useSelectHeadingComment) {
+		// Swap these around. Kind of dirty doing it this way.
+		regex.selectHeadingMarkup = regex.selectHeadingComment;
+	}
 
 	// Add plugin data
 	window.$docsify.select.version = pkgVersion;
