@@ -253,6 +253,44 @@ Windows instructions here
 
 <!-- tabs:end -->
 
+## use select heading comment
+
+- Type: `boolean`
+- Accepts: `true|false`
+- Default: `false`
+
+Changes the syntax for the select options from `--` or  `~~` to appending the an HTML comment (`<!-- select-option -->`) to the heading. For example:
+
+```markdown
+<!-- select:start -->
+<!-- select-menu-labels:Operating System -->
+
+#### macOS <!-- select-option -->
+
+macOS instructions here
+
+#### Linux <!-- select-option -->
+
+Linux instructions here
+
+#### Windows <!-- select-option -->
+
+Windows instructions here
+
+<!-- select:end -->
+```
+
+**Configuration**
+
+```javascript
+window.$docsify = {
+  // ...
+  select: {
+    useSelectHeadingComment: false, // default
+  },
+};
+```
+
 ## selected
 
 - Type: `Object`
