@@ -84,6 +84,8 @@ function renderSelectGroupsStage1(content) {
 	let selectBlockMatch;
 	let selectMatch;
 
+	let isFirst = true;
+
 	// Process each select block
 	while ((selectBlockMatch = regex.selectBlockMarkup.exec(content)) !== null) {
 		let selectBlock = selectBlockMatch[0];
@@ -119,8 +121,14 @@ function renderSelectGroupsStage1(content) {
 						.join('-')
 				);
 
+				let classAttribute = classNames.selectContent;
+				// Show the first block by default.
+				if (isFirst) {
+					classAttribute += ` ${classNames.selectContentActive}`;
+				}
+
 				selectBlock = selectBlock.replace(selectMatch[0], [
-					`\n${selectBlockIndent}<!-- ${commentReplaceMark} <div class="${classNames.selectContent}" data-select-content="${dataSelectContentAttribute}"> -->`,
+					`\n${selectBlockIndent}<!-- ${commentReplaceMark} <div class="${classAttribute}" data-select-content="${dataSelectContentAttribute}"> -->`,
 					`\n\n${selectBlockIndent}${selectContent}`,
 					`\n\n${selectBlockIndent}<!-- ${commentReplaceMark} </div> -->`
 				].join(''));
@@ -134,6 +142,8 @@ function renderSelectGroupsStage1(content) {
 						selectGroupOptions[index] = options;
 					}
 				});
+
+				isFirst = false;
 			}
 
 			selectMenuLabels.forEach((selectMenuLabel, index) => {
