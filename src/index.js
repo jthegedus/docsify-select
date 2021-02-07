@@ -59,7 +59,8 @@ const settings = {
 	sync: false,
 	useSelectHeadingComment: false,
 	detectOperatingSystem: {enabled: false, menuId: 'operating-system'},
-	theme: 'classic'
+	theme: 'classic',
+	selected: {}
 };
 
 // Functions
@@ -89,6 +90,8 @@ function renderSelectGroupsStage1(content) {
 
 	let selectBlockMatch;
 	let selectMatch;
+
+	let isFirst = true;
 
 	// Process each select block
 	while ((selectBlockMatch = regex.selectBlockMarkup.exec(content)) !== null) {
@@ -125,8 +128,14 @@ function renderSelectGroupsStage1(content) {
 						.join('-')
 				);
 
+				let classAttribute = classNames.selectContent;
+				// Show the first block by default.
+				if (isFirst) {
+					classAttribute += ` ${classNames.selectContentActive}`;
+				}
+
 				selectBlock = selectBlock.replace(selectMatch[0], [
-					`\n${selectBlockIndent}<!-- ${commentReplaceMark} <div class="${classNames.selectContent}" data-select-content="${dataSelectContentAttribute}"> -->`,
+					`\n${selectBlockIndent}<!-- ${commentReplaceMark} <div class="${classAttribute}" data-select-content="${dataSelectContentAttribute}"> -->`,
 					`\n\n${selectBlockIndent}${selectContent}`,
 					`\n\n${selectBlockIndent}<!-- ${commentReplaceMark} </div> -->`
 				].join(''));
@@ -140,6 +149,8 @@ function renderSelectGroupsStage1(content) {
 						selectGroupOptions[index] = options;
 					}
 				});
+
+				isFirst = false;
 			}
 
 			selectMenuLabels.forEach((selectMenuLabel, index) => {
@@ -316,10 +327,9 @@ function changeSelection(event, selectMenuList, selectContentList) {
 	}
 }
 
-function changeAllSyncedSelections(event, selectBlocks) {
-	// Get selectMenuId
-	const selectMenuId = event.target.id;
-	const selectOption = event.target.value;
+function changeAllSyncedSelections(selectBlocks, selectMenuId, selectOption) {
+	// Set selected again to persist across page jumps.
+	settings.selected[selectMenuId] = selectOption;
 
 	// For each selectBlock, if it contains a menu matching selectMenuId
 	selectBlocks.forEach(selectBlock => {
@@ -373,6 +383,8 @@ function docsifySelect(hook, _) {
 			const selectContainer = document.querySelector(`.${classNames.selectContainer}`);
 			const selectBlocks = selectContainer.querySelectorAll(`.${classNames.selectBlock}`);
 			if (selectBlocks.length !== 0) {
+				// Set preselected selections from settings.
+				Object.keys(settings.selected).forEach(x => changeAllSyncedSelections(selectBlocks, x, settings.selected[x]));
 				selectBlocks.forEach(selectBlock => {
 					const selectMenuList = selectBlock.querySelectorAll(`.${classNames.selectMenu}`);
 					const selectContentList = selectBlock.querySelectorAll(`.${classNames.selectContent}`);
@@ -382,7 +394,7 @@ function docsifySelect(hook, _) {
 						// Set change handler
 						selectMenu.addEventListener('change', event => {
 							if (settings.sync) {
-								changeAllSyncedSelections(event, selectBlocks);
+								changeAllSyncedSelections(selectBlocks, event.target.id, event.target.value);
 							} else {
 								// Change selection for MenuList & SelectContent in SelectBlock
 								changeSelection(event, selectMenuList, selectContentList);
