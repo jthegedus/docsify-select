@@ -253,6 +253,54 @@ Windows instructions here
 
 <!-- tabs:end -->
 
+## selected
+
+- Type: `Object`
+- Accepts: `{"<menu-label>": "<select-option>"}`
+- Default: `{}`
+
+Sets the default selection on load. Works as a key-value pair. For example, if you have:
+
+```markdown
+<!-- select:start -->
+<!-- select-menu-labels:Linux Distro -->
+
+#### --Arch Linux--
+
+Option 1 here.
+
+#### --Ubuntu--
+
+Option 2 here.
+
+<!-- select:end -->
+```
+
+Then providing then following will select *Arch Linux* on load:
+```javascript
+window.$docsify = {
+  // ...
+  select: {
+    selected: {
+      "linux-distro": "arch linux",
+    },
+  },
+};
+```
+
+Keys are lowercase and hyphenated. Values are lowercase. *Multiple Selections* is supported by having an entry per menu label.
+
+**Configuration**
+
+```javascript
+window.$docsify = {
+  // ...
+  select: {
+    selected: {}, // default
+  },
+};
+```
+
 ## theme
 
 - Type: `string`
