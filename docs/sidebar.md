@@ -10,7 +10,7 @@
 - **Author**
 - [![GitHub](https://icongr.am/simple/github.svg?color&size=16)jthegedus](https://github.com/jthegedus/)
 - [![Twitter](https://icongr.am/simple/twitter.svg?colored&size=16)@jthegedus](http://twitter.com/jthegedus)
-- [![Medium](https://icongr.am/simple/medium.svg?color&size=16)@jthegedus](https://medium.com/@jthegedus)
+- [![Medium](https://icongr.am/simple/medium.svg?color&size=16)@jthegedus](https://jthegedus.medium.com/)
 - **Credit**
 - [![GitHub](https://icongr.am/simple/github.svg?color&size=16)Contributors](https://github.com/jthegedus/docsify-select/graphs/contributors)
 - **Inspiration**
