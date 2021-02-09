@@ -1,6 +1,5 @@
 import {version as pkgVersion} from '../package.json';
 
-// eslint-disable-next-line import/no-unassigned-import
 import './styles.scss';
 
 const commentReplaceMark = 'select:replace';
@@ -46,7 +45,7 @@ const regex = {
 	// 0: Match
 	// 1: Option: #### --Label-- OR #### ~~Label~~
 	// 2: Content
-	selectHeadingMarkup: /[\r\n]*(\s*)#{1,6}\s*[~-]{2}\s*(.*[^\s])\s*[~-]{2}[\r\n]+([\s\S]*?)(?=#{1,6}\s*[~-]{2}|<!-+\s+select:\s*?end\s+-+>)/m,
+	selectHeadingMarkup: /[\r\n]*(\s*)#{1,6}\s*[~-]{2}\s*(.*\S)\s*[~-]{2}[\r\n]+([\s\S]*?)(?=#{1,6}\s*[~-]{2}|<!-+\s+select:\s*?end\s+-+>)/m,
 
 	// Matches select option and content
 	// 0: Match
@@ -382,7 +381,7 @@ function docsifySelect(hook, _) {
 		if (hasSelect) {
 			const selectContainer = document.querySelector(`.${classNames.selectContainer}`);
 			const selectBlocks = selectContainer.querySelectorAll(`.${classNames.selectBlock}`);
-			if (selectBlocks.length !== 0) {
+			if (selectBlocks.length > 0) {
 				// Set preselected selections from settings.
 				Object.keys(settings.selected).forEach(x => changeAllSyncedSelections(selectBlocks, x, settings.selected[x]));
 				selectBlocks.forEach(selectBlock => {
@@ -406,8 +405,7 @@ function docsifySelect(hook, _) {
 		}
 	});
 
-	hook.mounted(() => {
-	});
+	hook.mounted(() => {});
 }
 
 if (window) {

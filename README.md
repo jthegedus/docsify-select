@@ -27,12 +27,12 @@ Adapted from [jhildenbiddle's](https://github.com/jhildenbiddle/) `docsify-tabs`
 
 ## Contributing
 
-[Contributions of any kind welcome, just follow the guidelines](contributing.md)!
+Contributions of any kind welcome, just [follow the guidelines](contributing.md)!
 
 ### Contributors
 
-[Thanks goes to these contributors](https://github.com/jthegedus/docsify-select/graphs/contributors)!
+Thanks goes to [these contributors](https://github.com/jthegedus/docsify-select/graphs/contributors)!
 
 ## License
 
-[MIT License](license)
+[MIT License](LICENSE)
