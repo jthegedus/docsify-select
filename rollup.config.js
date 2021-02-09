@@ -61,7 +61,7 @@ const pluginSettings = {
 			mangle: false,
 			output: {
 				beautify: true,
-				comments: /(?:^!|@(?:license|preserve))/
+				comments: /^!|@(?:license|preserve)/
 			}
 		},
 		minify: {
@@ -122,7 +122,9 @@ const iifeMinified = merge({}, config, {
 
 // Exports
 // =============================================================================
-export default [
+const defaults = [
 	iife,
 	iifeMinified
 ];
+
+export default defaults;
