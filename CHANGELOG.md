@@ -1,3 +1,20 @@
+# [0.3.0](https://github.com/jthegedus/docsify-select/compare/v0.2.2...v0.3.0) (2021-02-09)
+
+
+### Bug Fixes
+
+* ci test badge ([92c27b6](https://github.com/jthegedus/docsify-select/commit/92c27b65711adaab99674ea15fba8be4dbfdb226))
+* docsify embed syntax ([2dfd46c](https://github.com/jthegedus/docsify-select/commit/2dfd46c167d1e066091f95f7cc0f36572aa645a7))
+* menu label for install methods ([5cc1d05](https://github.com/jthegedus/docsify-select/commit/5cc1d0514ce12dcd908a0be154860df05f096789))
+* show first block by default ([#14](https://github.com/jthegedus/docsify-select/issues/14)) ([5ee58f1](https://github.com/jthegedus/docsify-select/commit/5ee58f10df5473699e23ffb34810c8a8c3904ce0))
+* update links to default branch ([58dfd67](https://github.com/jthegedus/docsify-select/commit/58dfd67ed1e843adc9daedeeb3cda797dfa10e6b))
+
+
+### Features
+
+* HTML comment syntax option for select options ([#16](https://github.com/jthegedus/docsify-select/issues/16)) ([d28692c](https://github.com/jthegedus/docsify-select/commit/d28692ce8e578ffdfa34a66c1d64a66d206f274b))
+* selected setting to set default selection ([#15](https://github.com/jthegedus/docsify-select/issues/15)) ([ac7a6a8](https://github.com/jthegedus/docsify-select/commit/ac7a6a80da9d169c9cb8fd0e51019812bb8050b2))
+
 # Change Log
 
 ## 1.0.0 (2020-04-15)
