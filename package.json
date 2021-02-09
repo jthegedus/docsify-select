@@ -94,7 +94,7 @@
     "ie >= 10"
   ],
   "xo": {
-    "env": [
+    "envs": [
       "browser"
     ],
     "ignores": [
