@@ -139,7 +139,7 @@ function renderSelectGroupsStage1(content) {
 					`\n\n${selectBlockIndent}<!-- ${commentReplaceMark} </div> -->`
 				].join(''));
 
-				selectOptions.forEach((selectOption, index) => {
+				for (const [index, selectOption] of selectOptions.entries()) {
 					// Options is a object/dict so we can de-dupe the <options> list when the same value repeats (as happens when using multiple select lists in combination)
 					// eg: macOS,bash | macOS,linux
 					if (selectOption.toLowerCase().trim().split(' ').join('-') !== 'docsify-select-default') {
@@ -147,17 +147,17 @@ function renderSelectGroupsStage1(content) {
 						options[selectOption] = `${selectBlockIndent} <option value="${selectOption.toLowerCase()}">${selectOption}</option>`;
 						selectGroupOptions[index] = options;
 					}
-				});
+				}
 
 				isFirst = false;
 			}
 
-			selectMenuLabels.forEach((selectMenuLabel, index) => {
+			for (const [index, selectMenuLabel] of selectMenuLabels.entries()) {
 				selectGroups = [
 					...selectGroups,
 					`<div class="${classNames.selectMenuContainer}"> <label for="${selectMenuLabel.toLowerCase()}">${selectMenuLabel}</label> <select class="${classNames.selectMenu}" id="${selectMenuLabel.toLowerCase().replace(/\s/g, '-')}"> ${Object.values(selectGroupOptions[index])} </select> </div>`
 				];
-			});
+			}
 
 			selectStartReplacement = `<!-- ${commentReplaceMark} <div class="${[classNames.selectBlock, selectTheme].join(' ')}"> <div class="${classNames.selectGroup}"> ${selectGroups.toString().split(',').join(' ')} </div> -->`;
 			selectEndReplacement = `\n${selectBlockIndent}<!-- ${commentReplaceMark} </div> -->`;
@@ -169,9 +169,9 @@ function renderSelectGroupsStage1(content) {
 	}
 
 	// Restore code blocks
-	codeBlockMarkers.forEach((item, i) => {
-		content = content.replace(item, codeBlockMatch[i]);
-	});
+	for (const [index, item] of codeBlockMarkers.entries()) {
+		content = content.replace(item, codeBlockMatch[index]);
+	}
 
 	return content;
 }
@@ -264,22 +264,23 @@ function calculateSelectedContent(selectMenuList) {
 
 function setSelectedContent(newSelection, selectContentList) {
 	let contentMatch = false;
-	selectContentList.forEach(selectContent => {
+	for (const selectContent of selectContentList) {
 		selectContent.classList.remove(classNames.selectContentActive);
 		if (selectContent.getAttribute('data-select-content') === newSelection) {
 			selectContent.classList.add(classNames.selectContentActive);
 			contentMatch = true;
 		}
-	});
+	}
+
 	return contentMatch;
 }
 
 function setDefaultContent(selectContentList) {
-	selectContentList.forEach(selectContent => {
+	for (const selectContent of selectContentList) {
 		if (selectContent.getAttribute('data-select-content') === 'docsify-select-default') {
 			selectContent.classList.add(classNames.selectContentActive);
 		}
-	});
+	}
 }
 
 /**
@@ -331,10 +332,10 @@ function changeAllSyncedSelections(selectBlocks, selectMenuId, selectOption) {
 	settings.selected[selectMenuId] = selectOption;
 
 	// For each selectBlock, if it contains a menu matching selectMenuId
-	selectBlocks.forEach(selectBlock => {
+	for (const selectBlock of selectBlocks) {
 		const selectContentList = selectBlock.querySelectorAll(`.${classNames.selectContent}`);
 		const selectMenuList = selectBlock.querySelectorAll(`.${classNames.selectMenu}`);
-		selectMenuList.forEach(selectMenu => {
+		for (const selectMenu of selectMenuList) {
 			if (selectMenu.id === selectMenuId) {
 				Array.prototype.forEach.call(selectMenu.options, (option, index) => {
 					if (option.value === selectOption) {
@@ -342,7 +343,7 @@ function changeAllSyncedSelections(selectBlocks, selectMenuId, selectOption) {
 					}
 				});
 			}
-		});
+		}
 
 		// Now do the same as changeSelection function
 		const newSelection = calculateSelectedContent(selectMenuList);
@@ -351,7 +352,7 @@ function changeAllSyncedSelections(selectBlocks, selectMenuId, selectOption) {
 		if (contentMatch === false) {
 			setDefaultContent(selectContentList);
 		}
-	});
+	}
 }
 
 // Plugin
@@ -383,13 +384,16 @@ function docsifySelect(hook, _) {
 			const selectBlocks = selectContainer.querySelectorAll(`.${classNames.selectBlock}`);
 			if (selectBlocks.length > 0) {
 				// Set preselected selections from settings.
-				Object.keys(settings.selected).forEach(x => changeAllSyncedSelections(selectBlocks, x, settings.selected[x]));
-				selectBlocks.forEach(selectBlock => {
+				for (const x of Object.keys(settings.selected)) {
+					changeAllSyncedSelections(selectBlocks, x, settings.selected[x]);
+				}
+
+				for (const selectBlock of selectBlocks) {
 					const selectMenuList = selectBlock.querySelectorAll(`.${classNames.selectMenu}`);
 					const selectContentList = selectBlock.querySelectorAll(`.${classNames.selectContent}`);
 					// Set initial selection based on MenuList & SelectContent in SelectBlock
 					setInitialSelection(selectMenuList, selectContentList);
-					selectMenuList.forEach(selectMenu => {
+					for (const selectMenu of selectMenuList) {
 						// Set change handler
 						selectMenu.addEventListener('change', event => {
 							if (settings.sync) {
@@ -399,8 +403,8 @@ function docsifySelect(hook, _) {
 								changeSelection(event, selectMenuList, selectContentList);
 							}
 						});
-					});
-				});
+					}
+				}
 			}
 		}
 	});
@@ -415,11 +419,11 @@ if (window) {
 	window.$docsify.select = window.$docsify.select || {};
 
 	// Update settings based on $docsify config
-	Object.keys(window.$docsify.select).forEach(key => {
+	for (const key of Object.keys(window.$docsify.select)) {
 		if (Object.prototype.hasOwnProperty.call(settings, key)) {
 			settings[key] = window.$docsify.select[key];
 		}
-	});
+	}
 
 	if (settings.useSelectHeadingComment) {
 		// Swap these around. Kind of dirty doing it this way.

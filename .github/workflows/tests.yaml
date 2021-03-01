@@ -7,8 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: asdf_install
+        uses: asdf-vm/actions/install@v1
         with:
-          node-version: "12.x"
+          before_install: bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
       - run: npm install
       - run: npm test
