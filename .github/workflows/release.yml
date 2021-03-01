@@ -15,10 +15,10 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - name: asdf_install
+        uses: asdf-vm/actions/install@v1
         with:
-          node-version: 12
+          before_install: bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
       - name: Install dependencies
         run: npm install
       - name: Build docsify-select
