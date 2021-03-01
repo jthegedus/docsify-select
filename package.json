@@ -65,7 +65,7 @@
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-uglify": "^6.0.4",
     "semantic-release": "^17.3.8",
-    "xo": "^0.37.1"
+    "xo": "^0.38.2"
   },
   "scripts": {
     "build": "rollup -c",
