@@ -7,6 +7,7 @@ Please submit new PRs from a fork of the project.
 Install deps:
 
 ```shell
+asdf install
 npm install
 ```
 
