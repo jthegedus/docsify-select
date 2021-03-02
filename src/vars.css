@@ -5,14 +5,11 @@
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 
   /* Select Groups (wraps entire select section, container and content) */
-
   /* Select Menu Container (wraps label and menu) */
   --docsifyselect-menu-container-margin: 8px 4px 0 0;
-
   /* Select Menu Labels */
   --docsifyselect-menu-label-font-size: 14px;
   --docisfyselect-menu-label-text-transform: capitalize;
-
   /* Select Menu */
   --docsifyselect-menu-arrow: url("data:image/svg+xml;utf8,<svg fill='rgb(77, 77, 77)' height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'></path></svg>");
   --docsifyselect-menu-background: #f8f8f8;
@@ -28,7 +25,6 @@
   --docisfyselect-menu-width: 256px;
 
   /* Select Menu Options */
-
   /* Select Content */
   --docsifyselect-content-background: inherit;
   --docsifyselect-content-padding: 0px;
