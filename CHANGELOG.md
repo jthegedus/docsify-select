@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/jthegedus/docsify-select/compare/v1.0.0...v1.1.0) (2021-03-02)
+
+
+### Features
+
+* bump version # ([121b3da](https://github.com/jthegedus/docsify-select/commit/121b3dab46cd93e5b99b371978b19558440f8898))
+
 # [1.0.0](https://github.com/jthegedus/docsify-select/compare/v0.3.1...v1.0.0) (2021-03-02)
 
 
