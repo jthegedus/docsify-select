@@ -1,3 +1,15 @@
+# [1.0.0](https://github.com/jthegedus/docsify-select/compare/v0.3.1...v1.0.0) (2021-03-02)
+
+
+### Bug Fixes
+
+* formatting in vars ([dcc4eb7](https://github.com/jthegedus/docsify-select/commit/dcc4eb7c3e1356a8e11f5f210e58838832e97edf))
+
+
+### BREAKING CHANGES
+
+* bump version #
+
 ## [0.3.1](https://github.com/jthegedus/docsify-select/compare/v0.3.0...v0.3.1) (2021-03-02)
 
 
