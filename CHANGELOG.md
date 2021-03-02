@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/jthegedus/docsify-select/compare/v0.3.0...v0.3.1) (2021-03-02)
+
+
+### Bug Fixes
+
+* bump version # ([cb3296a](https://github.com/jthegedus/docsify-select/commit/cb3296a7c543ffbd392e20f683ed598be2ae1a40))
+
 # [0.3.0](https://github.com/jthegedus/docsify-select/compare/v0.2.2...v0.3.0) (2021-02-09)
 
 
