@@ -64,7 +64,7 @@
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-uglify": "^6.0.4",
-    "semantic-release": "^17.3.8",
+    "semantic-release": "^19.0.3",
     "xo": "^0.38.2"
   },
   "scripts": {
