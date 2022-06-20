@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/jthegedus/docsify-select/compare/v1.1.0...v1.1.1) (2022-06-20)
+
+
+### Bug Fixes
+
+* asdf install in ci ([8eefb9e](https://github.com/jthegedus/docsify-select/commit/8eefb9e01425b25d92ead7478e90cf0fe56490ac))
+* asdf install in ci for tests workflow ([3d3ccf2](https://github.com/jthegedus/docsify-select/commit/3d3ccf2cbc4b6f519618007fd46086b78db355ad))
+* bump nodejs for semantic-pr to work ([a4bc4be](https://github.com/jthegedus/docsify-select/commit/a4bc4be738f581712451414a93d8c31e3e851e79))
+
 # [1.1.0](https://github.com/jthegedus/docsify-select/compare/v1.0.0...v1.1.0) (2021-03-02)
 
 
