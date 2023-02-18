@@ -10,7 +10,8 @@
 <script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
 ```
 
-2. Set your configuration options in the Docsify settings in your `index.html`. Below are the default values:
+2. Set your configuration options in the Docsify settings in your `index.html`.
+   Below are the default values:
 
 ```
 window.$docsify = {
@@ -30,21 +31,25 @@ window.$docsify = {
 
 **Select Block**
 
-A select block is started with `<!-- select:start -->` and ends with `<!-- select:end -->`
+A select block is started with `<!-- select:start -->` and ends with
+`<!-- select:end -->`
 
 **Select Menu Labels**
 
-An HTML comment below the select block start: `<!-- select-menu-labels: MenuLabel1 -->`
+An HTML comment below the select block start:
+`<!-- select-menu-labels: MenuLabel1 -->`
 
 !> If your page isn't loading you likely forgot a label
 
 **Select Options**
 
-Each markdown heading (`h1` through to `h6`) you wish to be a select option, must be surrounded on each side with 2 of the following symbols: `~` or `-`.
+Each markdown heading (`h1` through to `h6`) you wish to be a select option,
+must be surrounded on each side with 2 of the following symbols: `~` or `-`.
 
 Eg: `# --macOS--` or `# ~~macOS~~`
 
-The first Option is selected by default unless some other [configuration](configuration) comes into play.
+The first Option is selected by default unless some other
+[configuration](configuration) comes into play.
 
 ### Example
 
@@ -52,7 +57,8 @@ The first Option is selected by default unless some other [configuration](config
 <!-- select:start -->
 <!-- select-menu-labels: Operating System -->
 
-Common content can go here above the first heading in a section and be rendered for all selections!
+Common content can go here above the first heading in a section and be rendered
+for all selections!
 
 #### --macOS--
 
@@ -68,7 +74,8 @@ Linux instructions here
 <!-- select:start -->
 <!-- select-menu-labels: Operating System -->
 
-Common content can go here above the first heading in a section and be rendered for all selections!
+Common content can go here above the first heading in a section and be rendered
+for all selections!
 
 #### --macOS--
 
@@ -84,7 +91,8 @@ Linux instructions here
 
 Menu Labels are just a comma-separated list.
 
-Select Options must then also be a comma-separated list of the same length, where the position of the labels aligns with each option in each heading.
+Select Options must then also be a comma-separated list of the same length,
+where the position of the labels aligns with each option in each heading.
 
 ```markdown
 <!-- select:start -->
@@ -124,9 +132,12 @@ Linux + Git
 
 ### Partial Selections
 
-The Multiple Select Menus example did not contain a selection of `Linux` & `Homebrew`. When this selection is made, no content is show.
+The Multiple Select Menus example did not contain a selection of `Linux` &
+`Homebrew`. When this selection is made, no content is show.
 
-Default content can be shown when no matching selection exists for the combinations of options. Use the heading `--Docsify Select Default--` to denote default content.
+Default content can be shown when no matching selection exists for the
+combinations of options. Use the heading `--Docsify Select Default--` to denote
+default content.
 
 ```markdown
 <!-- select:start -->
@@ -174,6 +185,7 @@ No selection for this combination. Sorry!
 
 ## Complex Usage
 
-You may have noticed the `sync` option at play on this page. See how that works over on the [configuration](configuration) page.
+You may have noticed the `sync` option at play on this page. See how that works
+over on the [configuration](configuration) page.
 
 See the [usage](usage) page for more complex examples.

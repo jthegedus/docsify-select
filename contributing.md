@@ -2,6 +2,8 @@
 
 Please submit new PRs from a fork of the project.
 
+<!-- TODO(jthegedus): update contributions guidelines -->
+
 ## Local development
 
 Install deps:
@@ -23,7 +25,8 @@ Edit files in `src` and see the browser automatically reload on file change.
 
 ## Areas requiring help
 
-- `css` to be compatible with [`docsify-themable`](https://github.com/jhildenbiddle/docsify-themeable)
+- `css` to be compatible with
+  [`docsify-themable`](https://github.com/jhildenbiddle/docsify-themeable)
 - themes? I am open to suggestions
 
 ## Roadmap and Improvements

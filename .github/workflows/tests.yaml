@@ -11,3 +11,4 @@ jobs:
         uses: asdf-vm/actions/install@v1
       - run: npm install
       - run: npm test
+# TODO(jthegedus): replace with Deno lint, typecheck etc

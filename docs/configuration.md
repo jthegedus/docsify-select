@@ -1,6 +1,8 @@
 # Configuration
 
-Options are set within the [`window.$docsify`](https://docsify.js.org/#/configuration) configuration under the `select` key.
+Options are set within the
+[`window.$docsify`](https://docsify.js.org/#/configuration) configuration under
+the `select` key.
 
 ## detect operating system
 
@@ -8,9 +10,15 @@ Options are set within the [`window.$docsify`](https://docsify.js.org/#/configur
 - Accepts: `{ enabled: true|false, elementId: string }`
 - Default: `{ enabled: false, menuId: "operating-system" }`
 
-Detects the machine's Operating System and sets any select menus with label `<!-- select-menu-labels: Operating System -->` to the `value` matching the Operating System.
+Detects the machine's Operating System and sets any select menus with label
+`<!-- select-menu-labels: Operating System -->` to the `value` matching the
+Operating System.
 
-This works as the `select` menu has it's `id` set to be equal to the trimmed, lowercase, hyphenated version of the label. IE: `<!-- select-menu-labels: Operating System -->` produces a HTML select element with `<select id="operating-system">`. This `id` is used to target the page's select menus.
+This works as the `select` menu has it's `id` set to be equal to the trimmed,
+lowercase, hyphenated version of the label. IE:
+`<!-- select-menu-labels: Operating System -->` produces a HTML select element
+with `<select id="operating-system">`. This `id` is used to target the page's
+select menus.
 
 If an option `value` matches then it will be set automatically.
 
@@ -18,14 +26,14 @@ If an option `value` matches then it will be set automatically.
 
 ```javascript
 window.$docsify = {
-  // ...
-  select: {
-    detectOperatingSystem: {
-      //defaults
-      enabled: false,
-      menuId: "operating-system",
-    },
-  },
+	// ...
+	select: {
+		detectOperatingSystem: {
+			//defaults
+			enabled: false,
+			menuId: "operating-system",
+		},
+	},
 };
 ```
 
@@ -154,18 +162,23 @@ ZSH + Linux
 - Accepts: `true|false`
 - Default: `false`
 
-If multiple select menus share the same label `<!-- select-menu-labels: Some Label Name -->` and contain the same option `## --Some Option--`, then the menu selections will be synced across select groups.
+If multiple select menus share the same label
+`<!-- select-menu-labels: Some Label Name -->` and contain the same option
+`## --Some Option--`, then the menu selections will be synced across select
+groups.
 
-The syncing occurs for all menus and options across the whole page. Combined with the `detect operating system` configuration, a great documentation user experience can be created.
+The syncing occurs for all menus and options across the whole page. Combined
+with the `detect operating system` configuration, a great documentation user
+experience can be created.
 
 **Configuration**
 
 ```javascript
 window.$docsify = {
-  // ...
-  select: {
-    sync: false, // default
-  },
+	// ...
+	select: {
+		sync: false, // default
+	},
 };
 ```
 
@@ -173,7 +186,8 @@ window.$docsify = {
 
 #### **Demo**
 
-This example shows two select menus with the same `Operating System` label and the same 3 options. See how they're synced.
+This example shows two select menus with the same `Operating System` label and
+the same 3 options. See how they're synced.
 
 <!-- select:start -->
 <!-- select-menu-labels:Operating System -->
@@ -259,7 +273,8 @@ Windows instructions here
 - Accepts: `true|false`
 - Default: `false`
 
-Changes the syntax for the select options from `--` or  `~~` to appending the an HTML comment (`<!-- select-option -->`) to the heading. For example:
+Changes the syntax for the select options from `--` or `~~` to appending the an
+HTML comment (`<!-- select-option -->`) to the heading. For example:
 
 ```markdown
 <!-- select:start -->
@@ -284,10 +299,10 @@ Windows instructions here
 
 ```javascript
 window.$docsify = {
-  // ...
-  select: {
-    useSelectHeadingComment: false, // default
-  },
+	// ...
+	select: {
+		useSelectHeadingComment: false, // default
+	},
 };
 ```
 
@@ -297,7 +312,8 @@ window.$docsify = {
 - Accepts: `{"<menu-label>": "<select-option>"}`
 - Default: `{}`
 
-Sets the default selection on load. Works as a key-value pair. For example, if you have:
+Sets the default selection on load. Works as a key-value pair. For example, if
+you have:
 
 ```markdown
 <!-- select:start -->
@@ -314,28 +330,30 @@ Option 2 here.
 <!-- select:end -->
 ```
 
-Then providing then following will select *Arch Linux* on load:
+Then providing then following will select _Arch Linux_ on load:
+
 ```javascript
 window.$docsify = {
-  // ...
-  select: {
-    selected: {
-      "linux-distro": "arch linux",
-    },
-  },
+	// ...
+	select: {
+		selected: {
+			"linux-distro": "arch linux",
+		},
+	},
 };
 ```
 
-Keys are lowercase and hyphenated. Values are lowercase. *Multiple Selections* is supported by having an entry per menu label.
+Keys are lowercase and hyphenated. Values are lowercase. _Multiple Selections_
+is supported by having an entry per menu label.
 
 **Configuration**
 
 ```javascript
 window.$docsify = {
-  // ...
-  select: {
-    selected: {}, // default
-  },
+	// ...
+	select: {
+		selected: {}, // default
+	},
 };
 ```
 
@@ -345,16 +363,17 @@ window.$docsify = {
 - Accepts: `'classic'|'none'`
 - Default: `'classic'`
 
-Sets the select menu theme. A value of `'none'` will indicate that no theme should be applied. Use `'none'` when creating custom select themes.
+Sets the select menu theme. A value of `'none'` will indicate that no theme
+should be applied. Use `'none'` when creating custom select themes.
 
 **Configuration**
 
 ```javascript
 window.$docsify = {
-  // ...
-  select: {
-    theme: "classic", // default
-  },
+	// ...
+	select: {
+		theme: "classic", // default
+	},
 };
 ```
 
@@ -404,11 +423,13 @@ ZSH + Linux
 
 ## Theme Properties
 
-Theme properties allow you to customize tab styles without writing complex CSS. The following list contains the default theme values:
+Theme properties allow you to customize tab styles without writing complex CSS.
+The following list contains the default theme values:
 
 [vars.css](https://raw.githubusercontent.com/jthegedus/docsify-select/main/src/vars.css ":include :type:code")
 
-To set theme properties, add a `<style>` element to your `index.html` file after all other stylesheets and set properties within a `:root` selector.
+To set theme properties, add a `<style>` element to your `index.html` file after
+all other stylesheets and set properties within a `:root` selector.
 
 ```html
 <style>

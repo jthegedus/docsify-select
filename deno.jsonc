@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"dom.asynciterable",
+			"deno.ns",
+			"deno.unstable"
+		],
+		"strict": true
+	},
+	"fmt": {
+		"files": {
+			"include": ["src/", "scripts/", "docs/"]
+		},
+		"options": {
+			"useTabs": true
+		}
+	}
+}
